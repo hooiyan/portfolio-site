@@ -1,6 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
-
-const config: GatsbyConfig = {
+const config = {
   siteMetadata: {
     title: `Portfolio site`,
     siteUrl: `https://www.yourdomain.tld`
@@ -11,14 +9,12 @@ const config: GatsbyConfig = {
       "name": "images",
       "path": "./src/images/"
     },
-    __key: "images"
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "pages",
       "path": "./src/pages/"
     },
-    __key: "pages"
   }]
 };
 
