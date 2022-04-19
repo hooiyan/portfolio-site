@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   siteMetadata: {
     title: `Portfolio site`,
     siteUrl: `https://www.yourdomain.tld`,
@@ -25,5 +25,3 @@ const config = {
     },
   ],
 };
-
-export default config;
