@@ -31,7 +31,7 @@ const HeaderStyles = styled.header`
 
 const Header = () => (
   <HeaderStyles className="header-wrapper">
-    <Logo />
+    <Logo fill="var(--color-primary-grayish-blue-hex)" />
     <Nav />
   </HeaderStyles>
 );

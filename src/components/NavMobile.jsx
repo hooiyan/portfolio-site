@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import device from '../styles/Breakpoints';
 import IconHamburger from './icons/IconHamburger';
 import IconClose from './icons/IconClose';
-import MenuItem from './NavMenuItem';
+import NavMenuItem from './NavMenuItem';
 
 const MobileWrapperStyles = styled.div`
   cursor: pointer;
@@ -74,7 +74,7 @@ const NavMobile = () => {
       </div>
       {isOpen && (
         <MenuListStyles className="menu-list">
-          <MenuItem>
+          <NavMenuItem>
             <Link
               to="/"
               activeStyle={{
@@ -83,8 +83,8 @@ const NavMobile = () => {
             >
               Home
             </Link>
-          </MenuItem>
-          <MenuItem>
+          </NavMenuItem>
+          <NavMenuItem>
             <Link
               to="/portfolio/"
               activeStyle={{
@@ -93,8 +93,8 @@ const NavMobile = () => {
             >
               Portfolio
             </Link>
-          </MenuItem>
-          <MenuItem>
+          </NavMenuItem>
+          <NavMenuItem>
             <Link
               to="/contact/"
               activeStyle={{
@@ -103,7 +103,7 @@ const NavMobile = () => {
             >
               Contact Me
             </Link>
-          </MenuItem>
+          </NavMenuItem>
         </MenuListStyles>
       )}
     </MobileWrapperStyles>

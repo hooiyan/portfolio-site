@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
-import MenuItem from './NavMenuItem';
+import NavMenuItem from './NavMenuItem';
 
 const DesktopWrapperStyles = styled.ul`
   display: flex;
@@ -19,27 +19,27 @@ const DesktopWrapperStyles = styled.ul`
 
 const NavDesktop = () => (
   <DesktopWrapperStyles className="desktop-nav">
-    <MenuItem>
+    <NavMenuItem>
       <Link to="/" activeStyle={{ color: `var(--color-primary-cyan-hex)` }}>
         Home
       </Link>
-    </MenuItem>
-    <MenuItem>
+    </NavMenuItem>
+    <NavMenuItem>
       <Link
         to="/portfolio/"
         activeStyle={{ color: `var(--color-primary-cyan-hex)` }}
       >
         Portfolio
       </Link>
-    </MenuItem>
-    <MenuItem>
+    </NavMenuItem>
+    <NavMenuItem>
       <Link
         to="/contact/"
         activeStyle={{ color: `var(--color-primary-cyan-hex)` }}
       >
         Contact Me
       </Link>
-    </MenuItem>
+    </NavMenuItem>
   </DesktopWrapperStyles>
 );
 

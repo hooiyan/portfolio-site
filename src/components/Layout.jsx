@@ -36,7 +36,7 @@ const Layout = ({ children }) => (
     <GlobalStyles />
     <Typography />
     <Header />
-    <MainWrapper>{children}</MainWrapper>
+    <MainWrapper className="main-wrapper">{children}</MainWrapper>
     <FooterOuterWrapper className="footer-outer-wrapper">
       <Footer />
     </FooterOuterWrapper>
