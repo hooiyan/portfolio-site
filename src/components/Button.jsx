@@ -9,7 +9,7 @@ const ButtonStyles = styled(Link)`
   color: var(--color-primary-grayish-blue-hex);
   font-size: 1.2rem;
   letter-spacing: 2px;
-  padding: 0.8rem 0;
+  padding: 0.8rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
