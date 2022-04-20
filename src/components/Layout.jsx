@@ -14,7 +14,7 @@ const MainWrapper = styled.main`
   padding-right: var(--lg-global-spacing-horizontal);
   padding-left: var(--lg-global-spacing-horizontal);
 
-  @media ${device.laptop} {
+  @media ${device.laptopS} {
     padding-bottom: var(--md-global-spacing-bottom);
     padding-right: var(--md-global-spacing-horizontal);
     padding-left: var(--md-global-spacing-horizontal);

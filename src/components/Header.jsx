@@ -14,7 +14,7 @@ const HeaderStyles = styled.header`
   margin: 0 auto;
   max-width: var(--max-width);
 
-  @media ${device.laptop} {
+  @media ${device.laptopS} {
     padding-top: var(--md-global-spacing-vertical);
     padding-bottom: calc(var(--md-global-spacing-vertical) - 1.7rem);
     padding-right: var(--md-global-spacing-horizontal);

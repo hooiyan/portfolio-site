@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import IconDownArrow from './icons/IconDownArrow';
 
-const WrapperStyles = styled.div`
+const WrapperStyles = styled.a`
   background-color: var(--color-primary-dark-blue-hex);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
   width: 20rem;
 
   .icon-outer-wrapper {
@@ -41,7 +42,7 @@ const WrapperStyles = styled.div`
 `;
 
 const ButtonIcon = () => (
-  <WrapperStyles className="button-icon-wrapper">
+  <WrapperStyles href="#about" className="button-icon-wrapper">
     <div className="icon-outer-wrapper">
       <div className="icon-inner-wrapper">
         <IconDownArrow />

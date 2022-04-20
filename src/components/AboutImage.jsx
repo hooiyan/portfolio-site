@@ -1,16 +1,15 @@
-import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 
-const HeroImage = () => (
+const AboutImage = () => (
   // TODO: Change to a real image
   <StaticImage
     // src="https://picsum.photos/1110/600"
     src="https://source.unsplash.com/random"
-    alt="hooiyan's latest project screenshot"
+    alt="this is hooi yan"
     className="image-wrapper"
     imgClassName="image"
-    layout="fullWidth"
   />
 );
 
-export default HeroImage;
+export default AboutImage;

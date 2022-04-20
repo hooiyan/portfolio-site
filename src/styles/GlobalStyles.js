@@ -51,6 +51,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   
   body {
     background-color: var(--color-secondary-very-light-gray-hex);

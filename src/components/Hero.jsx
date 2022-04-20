@@ -6,8 +6,15 @@ import HeroText from './HeroText';
 
 const HeroWrapperStyles = styled.section`
   position: relative;
+  margin-bottom: 15rem;
+
+  @media ${device.tablet} {
+    margin-bottom: 9.6rem;
+  }
 
   .image-wrapper {
+    height: 60rem;
+
     @media ${device.laptop} {
       height: 60rem;
     }
@@ -19,7 +26,7 @@ const HeroWrapperStyles = styled.section`
 `;
 
 const Hero = () => (
-  <HeroWrapperStyles>
+  <HeroWrapperStyles className="hero-wrapper">
     <HeroImage />
     <HeroText />
   </HeroWrapperStyles>

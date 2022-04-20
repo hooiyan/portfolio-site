@@ -38,7 +38,7 @@ const WrapperStyles = styled.section`
 `;
 
 const HeroText = () => (
-  <WrapperStyles>
+  <WrapperStyles className="hero-text-wrapper">
     <h1 className="hero-introduction">
       Hey, I'm Alex Spencer and I love building beautiful websites.
     </h1>
