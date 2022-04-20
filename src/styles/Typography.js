@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import FontHeading from '../assets/fonts/IbarraRealNova.ttf';
-import FontBody from '../assets/fonts/PublicSans.ttf';
+import FontHeading from '../fonts/IbarraRealNova.ttf';
+import FontBody from '../fonts/PublicSans.ttf';
 
 const Typography = createGlobalStyle`
   :root {
@@ -40,6 +40,11 @@ const Typography = createGlobalStyle`
     font-family: PublicSans;
     font-size: 1.6rem;
     line-height: var(--body-line-height);
+  }
+
+  button {
+    font-family: PublicSans;
+    letter-spacing: 2px;
   }
 
   h1, h2, h3, h4, h5, h6 {

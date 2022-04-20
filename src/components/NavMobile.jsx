@@ -1,15 +1,16 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import device from '../styles/Breakpoints';
-import IconHamburger from './icons/IconHamburger';
 import IconClose from './icons/IconClose';
+import IconHamburger from './icons/IconHamburger';
 import NavMenuItem from './NavMenuItem';
 
 const MobileWrapperStyles = styled.div`
   cursor: pointer;
   display: none;
   position: relative;
+  z-index: 999;
 
   @media ${device.tabletS} {
     display: flex;

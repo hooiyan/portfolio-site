@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import IconGitHub from './icons/IconGitHub';
-import IconTwitter from './icons/IconTwitter';
 import IconLinkedIn from './icons/IconLinkedIn';
+import IconTwitter from './icons/IconTwitter';
 
 const WrapperStyles = styled.section`
   display: flex;
@@ -23,6 +23,7 @@ const OutsideLink = styled.a`
 const FooterSocial = () => {
   const fill = 'var(--white)';
 
+  // TODO: Add social media links
   return (
     <WrapperStyles className="footer-social">
       <OutsideLink className="outside-link icon-github">
