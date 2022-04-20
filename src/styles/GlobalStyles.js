@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import device from './Breakpoints';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -36,8 +35,14 @@ const GlobalStyles = createGlobalStyle`
     --lg-global-spacing-vertical: 6.4rem;
     --lg-global-spacing-horizontal: 16.4rem;
 
+    --sm-global-spacing-bottom: 8rem;
+    --md-global-spacing-bottom: 9.6rem;
+    --lg-global-spacing-bottom: 15rem;
+
     --mobile-menu-spacing-vertical: 4rem;
     --mobile-menu-spacing-horizontal: 4rem;
+
+    --max-width: 1440px;
   }
 
   *, *::before, *::after {
@@ -45,23 +50,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
-  html {
-    margin: 0 auto;
-    max-width: 1440px;
-  }
-
+  
   body {
     background-color: var(--color-secondary-very-light-gray-hex);
-    margin: var(--lg-global-spacing-vertical) var(--lg-global-spacing-horizontal) 0 var(--lg-global-spacing-horizontal);
-
-    @media ${device.laptop} {
-      margin: var(--md-global-spacing-vertical) var(--md-global-spacing-horizontal) 0 var(--md-global-spacing-horizontal);
-    }
-
-    @media ${device.tabletS} {
-      margin: var(--sm-global-spacing-vertical) var(--sm-global-spacing-horizontal) 0 var(--sm-global-spacing-horizontal);
-    }
   }
 `;
 
