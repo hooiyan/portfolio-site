@@ -1,5 +1,5 @@
 import React from 'react';
 
-const ContactPage = () => <div>ContactPage</div>;
+const ContactPage = () => <h1>I am the ContactPage</h1>;
 
 export default ContactPage;
