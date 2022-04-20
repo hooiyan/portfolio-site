@@ -35,6 +35,10 @@ const WrapperStyles = styled.section`
     @media (max-width: 762px) {
       width: 100%;
     }
+
+    @media ${device.tabletS} {
+      height: 34.6rem;
+    }
   }
 `;
 
