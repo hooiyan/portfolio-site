@@ -18,6 +18,7 @@ const Typography = createGlobalStyle`
     --body-1-size: 1.6rem;
     --body-2-size: 1.5rem;
     --body-line-height: 30px;
+    --menu-item-size: 1.2rem;
   }
 
   @font-face {
