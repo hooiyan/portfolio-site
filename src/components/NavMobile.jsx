@@ -81,6 +81,7 @@ const NavMobile = () => {
               activeStyle={{
                 color: `var(--color-primary-cyan-hex)`,
               }}
+              onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
@@ -91,6 +92,7 @@ const NavMobile = () => {
               activeStyle={{
                 color: `var(--color-primary-cyan-hex)`,
               }}
+              onClick={() => setIsOpen(false)}
             >
               Portfolio
             </Link>
@@ -101,6 +103,7 @@ const NavMobile = () => {
               activeStyle={{
                 color: `var(--color-primary-cyan-hex)`,
               }}
+              onClick={() => setIsOpen(false)}
             >
               Contact Me
             </Link>

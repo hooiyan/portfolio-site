@@ -8,12 +8,15 @@ const WrapperStyles = styled.section`
   display: flex;
   column-gap: 3.2rem;
   align-items: center;
-  margin-top: 7rem;
   margin-top: ${(props) => (props.isHome ? '15rem' : '7rem')};
 
-  @media (max-width: 762px) {
+  @media ${device.tablet} {
+    margin-top: ${(props) => (props.isHome ? '9.6rem' : '1.6rem')};
+  }
+
+  @media ${device.tabletM} {
     flex-direction: column;
-    margin-top: 9.6rem;
+    margin-top: ${(props) => (props.isHome ? '8rem' : '0')};
   }
 
   .title {
@@ -21,7 +24,7 @@ const WrapperStyles = styled.section`
     letter-spacing: var(--h2-letter-spacing);
     line-height: var(--h2-line-height);
 
-    @media (max-width: 762px) {
+    @media ${device.tabletM} {
       margin-bottom: 4rem;
       text-align: center;
     }
@@ -34,7 +37,7 @@ const WrapperStyles = styled.section`
     border-left: none;
     width: 90%;
 
-    @media ${device.laptopM} {
+    @media ${device.laptopS} {
       width: 80%;
     }
 
@@ -44,6 +47,10 @@ const WrapperStyles = styled.section`
 
     @media ${device.tablet} {
       width: 30%;
+    }
+
+    @media ${device.tabletM} {
+      display: none;
     }
   }
 `;

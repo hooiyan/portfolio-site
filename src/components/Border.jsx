@@ -9,7 +9,6 @@ const BorderStyles = styled.hr`
   border-left-width: 0;
   height: 1px;
   width: 100%;
-  /* position: absolute; */
   top: ${(props) => (props.top ? '0' : null)};
   bottom: ${(props) => (props.bottom ? '0' : null)};
 `;

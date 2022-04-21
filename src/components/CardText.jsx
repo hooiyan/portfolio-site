@@ -12,27 +12,27 @@ const WrapperStyles = styled.section`
   color: var(--color-primary-grayish-blue-hex);
   margin-left: ${(props) => (props.isEven ? '0' : '12.5rem')};
   margin-right: ${(props) => (props.isEven ? '12.5rem' : '0')};
-  width: 34.5%;
-  /* height: 50rem; */
+  width: ${(props) => (props.isAbout ? '34.5%' : '34.5%')};
   height: ${(props) => (props.isAbout ? '60rem' : '50rem')};
 
   @media ${device.laptopM} {
-    margin-left: 10rem;
-  }
-
-  @media ${device.laptopS} {
-    margin-left: 8rem;
+    margin-left: ${(props) => (props.isEven ? '0' : '8.5rem')};
+    margin-right: ${(props) => (props.isEven ? '8.5rem' : '0')};
+    width: ${(props) => (props.isAbout ? '50%' : '50%')};
   }
 
   @media ${device.tablet} {
-    width: 50%;
-    margin-left: 4rem;
+    height: ${(props) => (!props.isAbout ? '41.8rem' : '60rem')};
+    margin-left: ${(props) => (props.isEven ? '0' : '6.9rem')};
+    margin-right: ${(props) => (props.isEven ? '6.9rem' : '0')};
   }
 
-  @media (max-width: 762px) {
-    width: 100%;
+  @media ${device.tabletM} {
     margin-top: 3.2rem;
     margin-left: 0;
+    margin-right: 0;
+    height: fit-content;
+    width: 100%;
   }
 
   .card-title {
@@ -44,6 +44,10 @@ const WrapperStyles = styled.section`
     margin-bottom: 2.4rem;
     opacity: 0.8;
   }
+
+  .details {
+    padding: 3.2rem 0 3.9rem 0;
+  }
 `;
 
 const CardText = ({ isAbout, isEven, text, title, to, value }) => (
@@ -53,7 +57,7 @@ const CardText = ({ isAbout, isEven, text, title, to, value }) => (
     isEven={isEven}
   >
     <Border top />
-    <div>
+    <div className="details">
       <h2 className="card-title">{title}</h2>
       <p className="card-text">{text}</p>
       <Button to={to} value={value} />

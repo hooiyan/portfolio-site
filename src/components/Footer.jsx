@@ -17,7 +17,7 @@ const FooterStyles = styled.footer`
   align-items: center;
   justify-content: space-between;
 
-  @media ${device.laptopS} {
+  @media ${device.laptop} {
     padding-right: var(--md-global-spacing-horizontal);
     padding-left: var(--md-global-spacing-horizontal);
   }
