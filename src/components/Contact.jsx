@@ -5,9 +5,9 @@ import Button from './Button';
 
 const WrapperStyles = styled.section`
   display: flex;
+  column-gap: 3.2rem;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 15rem;
+  margin-top: 7rem;
 
   @media (max-width: 762px) {
     flex-direction: column;
@@ -16,6 +16,8 @@ const WrapperStyles = styled.section`
 
   .title {
     color: var(--color-primary-grayish-blue-hex);
+    letter-spacing: var(--h2-letter-spacing);
+    line-height: var(--h2-line-height);
 
     @media (max-width: 762px) {
       margin-bottom: 4rem;
@@ -25,12 +27,10 @@ const WrapperStyles = styled.section`
 
   .line {
     border-top: 1px solid rgba(32, 58, 76, 0.15);
-    border-bottom-width: 0;
-    border-right-width: 0;
-    border-left-width: 0;
-    height: 1px;
-    margin: 0 3.2rem;
-    width: 100%;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    width: 90%;
 
     @media ${device.laptopM} {
       width: 80%;
@@ -49,7 +49,7 @@ const WrapperStyles = styled.section`
 const Contact = () => (
   <WrapperStyles className="contact-wrapper">
     <h2 className="title">Interested in doing a project together?</h2>
-    <hr className="line" />
+    <div className="line" />
     <Button to="/contact/" value="Contact Me" />
   </WrapperStyles>
 );

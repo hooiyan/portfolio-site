@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import FontHeading from '../fonts/IbarraRealNova.ttf';
-import FontBody from '../fonts/PublicSans.ttf';
+import HeadingBold from '../fonts/IbarraRealNova-Bold.ttf';
+import HeadingRegular from '../fonts/IbarraRealNova-Regular.ttf';
+import BodyRegular from '../fonts/PublicSans-Regular.ttf';
 
 const Typography = createGlobalStyle`
   :root {
@@ -22,17 +23,26 @@ const Typography = createGlobalStyle`
   }
 
   @font-face {
-    font-family: IbarraRealNova;
-    src: url(${FontHeading});
+    font-family: IbarraRealNovaBold;
+    src: url(${HeadingBold});
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: IbarraRealNovaRegular;
+    src: url(${HeadingRegular});
+    font-weight: 400;
   }
 
   @font-face {
     font-family: PublicSans;
-    src: url(${FontBody});
+    src: url(${BodyRegular});
+    font-weight: 400;
   }
 
+
   html {
-    font-family: IbarraRealNova, PublicSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: IbarraRealNovaBold, PublicSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 62.5%;
   }
 
@@ -48,7 +58,7 @@ const Typography = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: IbarraRealNova;
+    font-family: IbarraRealNovaBold;
     font-weight: var(--font-bold);
   }
 
@@ -65,6 +75,7 @@ const Typography = createGlobalStyle`
   }
 
   h3 {
+    font-family: IbarraRealNovaRegular;
     font-size: var(--h3-size);
     font-weight: var(--font-regular);
     letter-spacing: var(--h3-letter-spacing);

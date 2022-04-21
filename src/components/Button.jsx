@@ -9,11 +9,11 @@ const ButtonStyles = styled(Link)`
   color: var(--color-primary-grayish-blue-hex);
   font-size: 1.2rem;
   letter-spacing: 2px;
-  padding: 0.8rem;
+  padding: 1.6rem 3.6rem 1.6rem 3.2rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: 20.2rem;
+  flex-shrink: 0;
 
   &:hover {
     background-color: var(--color-primary-grayish-blue-hex);

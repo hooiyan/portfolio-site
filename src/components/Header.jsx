@@ -10,7 +10,7 @@ const HeaderStyles = styled.header`
   padding-top: var(--lg-global-spacing-vertical);
   padding-bottom: calc(var(--lg-global-spacing-vertical) - 1rem);
   padding-right: var(--lg-global-spacing-horizontal);
-  padding-left: var(--lg-global-spacing-horizontal);
+  padding-left: calc(var(--lg-global-spacing-horizontal) + 0.1rem);
   margin: 0 auto;
   max-width: var(--max-width);
 
