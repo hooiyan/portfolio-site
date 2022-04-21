@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import device from '../styles/Breakpoints';
 import Button from './Button';
 
@@ -8,6 +9,7 @@ const WrapperStyles = styled.section`
   column-gap: 3.2rem;
   align-items: center;
   margin-top: 7rem;
+  margin-top: ${(props) => (props.isHome ? '15rem' : '7rem')};
 
   @media (max-width: 762px) {
     flex-direction: column;
@@ -46,8 +48,8 @@ const WrapperStyles = styled.section`
   }
 `;
 
-const Contact = () => (
-  <WrapperStyles className="contact-wrapper">
+const Contact = ({ isHome }) => (
+  <WrapperStyles className="contact-wrapper" isHome={isHome}>
     <h2 className="title">Interested in doing a project together?</h2>
     <div className="line" />
     <Button to="/contact/" value="Contact Me" />
@@ -55,3 +57,7 @@ const Contact = () => (
 );
 
 export default Contact;
+
+Contact.propTypes = {
+  isHome: PropTypes.bool,
+};

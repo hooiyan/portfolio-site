@@ -27,6 +27,7 @@ const WrapperStyles = styled.section`
   .image-wrapper {
     width: 53.2%;
     height: 50rem;
+    height: ${(props) => (props.isAbout ? '60rem' : '50rem')};
 
     @media ${device.laptopS} {
       width: 38%;
@@ -46,10 +47,22 @@ const WrapperStyles = styled.section`
   }
 `;
 
-const CardWrapper = ({ alt, id, isEven, text, title, to, value }) => (
-  <WrapperStyles id={id} className="card-wrapper" isEven={isEven}>
+const CardWrapper = ({ alt, id, isAbout, isEven, text, title, to, value }) => (
+  <WrapperStyles
+    id={id}
+    className="card-wrapper"
+    isAbout={isAbout}
+    isEven={isEven}
+  >
     <CardImage alt={alt} />
-    <CardText isEven={isEven} text={text} title={title} to={to} value={value} />
+    <CardText
+      isAbout={isAbout}
+      isEven={isEven}
+      text={text}
+      title={title}
+      to={to}
+      value={value}
+    />
   </WrapperStyles>
 );
 
@@ -58,6 +71,7 @@ export default CardWrapper;
 CardWrapper.propTypes = {
   alt: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  isAbout: PropTypes.bool,
   isEven: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

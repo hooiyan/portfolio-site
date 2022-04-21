@@ -5,9 +5,10 @@ import ButtonIcon from './ButtonIcon';
 
 const WrapperStyles = styled.section`
   background-color: var(--color-secondary-very-light-gray-hex);
+  border-left: none;
   padding-top: 5.6rem;
-  padding-right: 5.6rem;
-  width: 44.5rem;
+  padding-right: 3rem;
+  width: 48rem;
   position: absolute;
   bottom: 0;
 
@@ -20,6 +21,8 @@ const WrapperStyles = styled.section`
 
   .hero-introduction {
     color: var(--color-primary-grayish-blue-hex);
+    letter-spacing: var(--h1-letter-spacing);
+    line-height: var(--h1-line-height);
     margin-bottom: 5.3rem;
 
     @media ${device.tablet} {
@@ -40,7 +43,7 @@ const WrapperStyles = styled.section`
 const HeroText = () => (
   <WrapperStyles className="hero-text-wrapper">
     <h1 className="hero-introduction">
-      Hey, I'm Alex Spencer and I love building beautiful websites.
+      Hi, I'm Hooi Yan and I enjoy building beautiful responsive websites.
     </h1>
     <ButtonIcon />
   </WrapperStyles>

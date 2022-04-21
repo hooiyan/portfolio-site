@@ -13,7 +13,8 @@ const WrapperStyles = styled.section`
   margin-left: ${(props) => (props.isEven ? '0' : '12.5rem')};
   margin-right: ${(props) => (props.isEven ? '12.5rem' : '0')};
   width: 34.5%;
-  height: 50rem;
+  /* height: 50rem; */
+  height: ${(props) => (props.isAbout ? '60rem' : '50rem')};
 
   @media ${device.laptopM} {
     margin-left: 10rem;
@@ -45,8 +46,12 @@ const WrapperStyles = styled.section`
   }
 `;
 
-const CardText = ({ isEven, text, title, to, value }) => (
-  <WrapperStyles className="card-text-wrapper" isEven={isEven}>
+const CardText = ({ isAbout, isEven, text, title, to, value }) => (
+  <WrapperStyles
+    className="card-text-wrapper"
+    isAbout={isAbout}
+    isEven={isEven}
+  >
     <Border top />
     <div>
       <h2 className="card-title">{title}</h2>
@@ -60,6 +65,7 @@ const CardText = ({ isEven, text, title, to, value }) => (
 export default CardText;
 
 CardText.propTypes = {
+  isAbout: PropTypes.bool,
   isEven: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

@@ -33,5 +33,3 @@ const Hero = () => (
 );
 
 export default Hero;
-
-// https://source.unsplash.com/random
