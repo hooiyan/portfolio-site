@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import FooterNav from './FooterNav';
-import FooterSocial from './FooterSocial';
+import SocialNetwork from './SocialNetwork';
 
 const FooterStyles = styled.footer`
   background-color: var(--color-primary-grayish-blue-hex);
@@ -36,7 +36,7 @@ const FooterStyles = styled.footer`
 const Footer = () => (
   <FooterStyles className="footer-inner-wrapper">
     <FooterNav />
-    <FooterSocial />
+    <SocialNetwork fill="var(--white)" />
   </FooterStyles>
 );
 

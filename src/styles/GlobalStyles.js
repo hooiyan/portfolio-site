@@ -44,6 +44,9 @@ const GlobalStyles = createGlobalStyle`
     --mobile-menu-spacing-horizontal: 4rem;
 
     --max-width: 1440px;
+    --right-column-initial-width: 57.2%;
+    --right-column-second-width: 62%;
+    --right-column-final-width: 100%;
   }
 
   *, *::before, *::after {

@@ -60,7 +60,7 @@ const CardText = ({ isAbout, isEven = false, text, title, to, value }) => (
     <div className="details">
       <h2 className="card-title">{title}</h2>
       <p className="card-text">{text}</p>
-      <Button to={to} value={value} />
+      <Button isDark={false} to={to} value={value} />
     </div>
     <Border bottom />
   </WrapperStyles>
