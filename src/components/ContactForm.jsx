@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
-import Button from './Button';
+import ButtonSubmit from './ButtonSubmit';
 
 const FormStyles = styled.form`
   width: var(--right-column-initial-width);
@@ -55,12 +55,13 @@ const FormStyles = styled.form`
 
 const ContactForm = () => (
   <FormStyles
+    id="contact"
+    name="contact-form"
     method="post"
-    name="contact"
-    netlify-honeypot="bot-field"
     data-netlify="true"
+    data-netlify-honeypot="bot-field"
   >
-    <input type="text" name="hidden" id="hidden" hidden />
+    <input type="hidden" name="form-name" value="contact-form" />
 
     <div>
       <label htmlFor="name" name="name">
@@ -88,8 +89,7 @@ const ContactForm = () => (
       <textarea id="message" rows="4" placeholder="How can I help?" required />
       <br />
     </div>
-    <button type="submit">SEND MESSAGE</button>
-    {/* <Button isDark value="Send Message" /> */}
+    <ButtonSubmit isDark value="Send Message" />
   </FormStyles>
 );
 
