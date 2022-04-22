@@ -68,7 +68,14 @@ const ContactForm = () => (
         Name
       </label>
       <br />
-      <input type="text" id="name" placeholder="Jane Appleseed" required />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        aria-label="Name"
+        placeholder="Jane Appleseed"
+        required
+      />
       <br />
     </div>
 
@@ -77,7 +84,14 @@ const ContactForm = () => (
         Email Address
       </label>
       <br />
-      <input type="email" id="email" placeholder="email@example.com" required />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        aria-label="Email"
+        placeholder="email@example.com"
+        required
+      />
       <br />
     </div>
 
@@ -86,7 +100,14 @@ const ContactForm = () => (
         Message
       </label>
       <br />
-      <textarea id="message" rows="4" placeholder="How can I help?" required />
+      <textarea
+        id="message"
+        name="message"
+        aria-label="Message"
+        rows="4"
+        placeholder="How can I help?"
+        required
+      />
       <br />
     </div>
     <ButtonSubmit isDark value="Send Message" />
