@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import ButtonIcon from './ButtonIcon';
+import Intro from '../content/intro.json';
 
 const WrapperStyles = styled.section`
   background-color: var(--color-secondary-very-light-gray-hex);
@@ -42,9 +43,7 @@ const WrapperStyles = styled.section`
 
 const HeroText = () => (
   <WrapperStyles className="hero-text-wrapper">
-    <h1 className="hero-introduction">
-      Hi, I'm Hooi Yan and I enjoy building beautiful responsive websites.
-    </h1>
+    <h1 className="hero-introduction">{Intro.short}</h1>
     <ButtonIcon />
   </WrapperStyles>
 );

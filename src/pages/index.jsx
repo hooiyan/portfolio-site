@@ -1,9 +1,22 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
+import Intro from '../content/intro.json';
 
-const IndexPage = () => (
+export const query = graphql`
+  query {
+    file(name: { eq: "me" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG)
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => (
   <>
     <Hero />
     <CardWrapper
@@ -11,7 +24,8 @@ const IndexPage = () => (
       id="about"
       isAbout
       isEven={false}
-      text=" I'm a junior front-end developer looking for a new role in an exciting company. I focus on writing accessible HTML, using modern CSS practices and writing clean JavaScript. When writing JavaScript code, I mostly use react, but I can adapt to whatever tools are required. I'm based in London, UK, but I'm happy working remotely and have experience in remote teams. When I'm not coding, you'll find me outdoors. I love being out in nature whether that's going for a walk, run or cycling. I'd love you to check out my work."
+      src={data.file}
+      text={Intro.long}
       title="About Me"
       to="/portfolio/"
       value="Go to portfolio"
@@ -21,3 +35,7 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
+
+IndexPage.propTypes = {
+  data: PropTypes.object,
+};

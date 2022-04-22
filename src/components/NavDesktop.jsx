@@ -28,6 +28,7 @@ const NavDesktop = () => (
       <Link
         to="/portfolio/"
         activeStyle={{ color: `var(--color-primary-cyan-hex)` }}
+        partiallyActive
       >
         Portfolio
       </Link>

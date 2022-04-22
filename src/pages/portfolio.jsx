@@ -1,7 +1,48 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
+
+// export const query = graphql`
+//   query {
+//     allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+//       edges {
+//         node {
+//           childImageSharp {
+//             gatsbyImageData(placeholder: TRACED_SVG)
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
+export const query = graphql`
+  query {
+    bookmark: file(name: { eq: "bookmark" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    fylo: file(name: { eq: "fylo" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    manage: file(name: { eq: "manage" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    insure: file(name: { eq: "insure" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+  }
+`;
 
 const WrapperStyles = styled.section`
   display: flex;
@@ -10,40 +51,46 @@ const WrapperStyles = styled.section`
   margin-top: 4rem;
 `;
 
-const PortfolioPage = () => (
+const PortfolioPage = ({ data }) => (
   <WrapperStyles>
     <CardWrapper
       alt="screenshot of project 1"
       id="project1"
+      isEven={false}
+      src={data.manage}
       text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
       title="Manage"
-      to="/portfolio/manage/"
+      to="/portfolio/Fido/"
       value="View Project"
     />
     <CardWrapper
-      alt="screenshot of project 2"
-      id="project2"
+      alt="screenshot of project 1"
+      id="project1"
       isEven
-      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the features section."
+      src={data.bookmark}
+      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
       title="Bookmark"
-      to="/portfolio/bookmark/"
+      to="/portfolio/Fido/"
       value="View Project"
     />
     <CardWrapper
-      alt="screenshot of project 3"
-      id="project3"
-      text="This was a small project which mostly consisted of HTML and CSS. I built a fully-responsive landing page. The only JavaScript this project required was to enable the toggling of the mobile navigation."
+      alt="screenshot of project 1"
+      id="project1"
+      isEven={false}
+      src={data.insure}
+      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
       title="Insure"
-      to="/portfolio/insure/"
+      to="/portfolio/Fido/"
       value="View Project"
     />
     <CardWrapper
-      alt="screenshot of project 4"
-      id="project4"
+      alt="screenshot of project 1"
+      id="project1"
       isEven
-      text="This project was built in pure HTML and CSS. I had mobile and desktop designs to work to and built it so that it was fully-responsive. I took a mobile-first approach and used modern CSS like Flexbox and Grid for layout purposes."
+      src={data.fylo}
+      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
       title="Fylo"
-      to="/portfolio/fylo/"
+      to="/portfolio/Fido/"
       value="View Project"
     />
     <Contact />
@@ -51,3 +98,7 @@ const PortfolioPage = () => (
 );
 
 export default PortfolioPage;
+
+PortfolioPage.propTypes = {
+  data: PropTypes.object,
+};

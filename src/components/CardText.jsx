@@ -50,7 +50,7 @@ const WrapperStyles = styled.section`
   }
 `;
 
-const CardText = ({ isAbout, isEven, text, title, to, value }) => (
+const CardText = ({ isAbout, isEven = false, text, title, to, value }) => (
   <WrapperStyles
     className="card-text-wrapper"
     isAbout={isAbout}

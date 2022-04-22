@@ -92,6 +92,7 @@ const NavMobile = () => {
               activeStyle={{
                 color: `var(--color-primary-cyan-hex)`,
               }}
+              partiallyActive
               onClick={() => setIsOpen(false)}
             >
               Portfolio

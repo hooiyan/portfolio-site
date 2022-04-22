@@ -13,11 +13,7 @@ const HeroWrapperStyles = styled.section`
   }
 
   .image-wrapper {
-    height: 60rem;
-
-    @media ${device.laptop} {
-      height: 60rem;
-    }
+    height: 50rem;
 
     @media ${device.tabletS} {
       height: 27rem;

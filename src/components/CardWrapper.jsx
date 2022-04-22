@@ -54,6 +54,7 @@ const CardWrapper = ({
   id,
   isAbout,
   isEven = false,
+  src,
   text,
   title,
   to,
@@ -65,7 +66,7 @@ const CardWrapper = ({
     isAbout={isAbout}
     isEven={isEven}
   >
-    <CardImage alt={alt} />
+    <CardImage alt={alt} src={src} />
     <CardText
       isAbout={isAbout}
       isEven={isEven}
@@ -83,7 +84,8 @@ CardWrapper.propTypes = {
   alt: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   isAbout: PropTypes.bool,
-  isEven: PropTypes.bool,
+  isEven: PropTypes.bool.isRequired,
+  src: PropTypes.object.isRequired,
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
