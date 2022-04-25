@@ -1,10 +1,11 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import React from 'react';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
-import Intro from '../content/intro.json';
+import Seo from '../components/Seo';
+import intro from '../content/intro.json';
 
 export const query = graphql`
   query {
@@ -18,14 +19,15 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => (
   <>
+    <Seo isHome />
     <Hero />
     <CardWrapper
-      alt="screenshot of project 1"
+      alt="Screenshot of my latest project"
       id="about"
       isAbout
       isEven={false}
       src={data.file}
-      text={Intro.long}
+      text={intro.long}
       title="About Me"
       to="/portfolio/"
       value="Go to portfolio"

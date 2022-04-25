@@ -5,7 +5,7 @@ import device from '../styles/Breakpoints';
 import CardImage from './CardImage';
 import CardText from './CardText';
 
-const WrapperStyles = styled.section`
+const CardWrapperStyles = styled.section`
   display: flex;
   align-items: center;
   align-self: ${(props) => (props.isEven ? 'flex-end' : null)};
@@ -38,8 +38,8 @@ const WrapperStyles = styled.section`
     }
 
     @media ${device.tabletM} {
-      height: ${(props) => (props.isAbout ? '40rem' : '28.8rem')};
       justify-content: flex-start;
+      height: ${(props) => (props.isAbout ? '40rem' : '28.8rem')};
       width: 100%;
     }
 
@@ -60,9 +60,9 @@ const CardWrapper = ({
   to,
   value,
 }) => (
-  <WrapperStyles
-    id={id}
+  <CardWrapperStyles
     className="card-wrapper"
+    id={id}
     isAbout={isAbout}
     isEven={isEven}
   >
@@ -75,7 +75,7 @@ const CardWrapper = ({
       to={to}
       value={value}
     />
-  </WrapperStyles>
+  </CardWrapperStyles>
 );
 
 export default CardWrapper;

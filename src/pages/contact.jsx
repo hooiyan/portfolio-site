@@ -2,10 +2,12 @@ import React from 'react';
 import Border from '../components/Border';
 import ContactForm from '../components/ContactForm';
 import ContactPitch from '../components/ContactPitch';
+import Seo from '../components/Seo';
 import TwoColumn from '../components/TwoColumn';
 
 const ContactPage = () => (
   <>
+    <Seo title="Contact" />
     <section>
       <Border />
       <TwoColumn>

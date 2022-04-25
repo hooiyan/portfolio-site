@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `HooiYan - Frontend Developer`,
+    siteUrl: `https://www.hooiyan.com`,
+    author: `HooiYan`,
   },
   plugins: [
     'gatsby-plugin-image',

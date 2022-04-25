@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import ButtonIcon from './ButtonIcon';
-import Intro from '../content/intro.json';
+import intro from '../content/intro.json';
 
 const WrapperStyles = styled.section`
-  background-color: var(--color-secondary-very-light-gray-hex);
-  border-left: none;
+  background-color: rgba(234, 234, 235, 0.8);
+  border: none;
   padding-top: 5.6rem;
   padding-right: 3rem;
   width: 48rem;
@@ -14,10 +14,11 @@ const WrapperStyles = styled.section`
   bottom: 0;
 
   @media ${device.tabletS} {
-    position: static;
+    background-color: var(--color-secondary-very-light-gray-hex);
     padding-top: 2.4rem;
     padding-right: 0;
     width: auto;
+    position: static;
   }
 
   .hero-introduction {
@@ -43,7 +44,7 @@ const WrapperStyles = styled.section`
 
 const HeroText = () => (
   <WrapperStyles className="hero-text-wrapper">
-    <h1 className="hero-introduction">{Intro.short}</h1>
+    <h1 className="hero-introduction">{intro.short}</h1>
     <ButtonIcon />
   </WrapperStyles>
 );

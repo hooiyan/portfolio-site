@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import device from '../styles/Breakpoints';
 import Button from './Button';
 
-const WrapperStyles = styled.section`
+const ContactWrapperStyles = styled.section`
   display: flex;
-  column-gap: 3.2rem;
   align-items: center;
+  column-gap: 3.2rem;
   margin-top: ${(props) => (props.isHome ? '15rem' : '7rem')};
 
   @media ${device.tablet} {
@@ -32,8 +32,8 @@ const WrapperStyles = styled.section`
 
   .line {
     border-top: 1px solid rgba(32, 58, 76, 0.15);
-    border-bottom: none;
     border-right: none;
+    border-bottom: none;
     border-left: none;
     width: 90%;
 
@@ -56,11 +56,11 @@ const WrapperStyles = styled.section`
 `;
 
 const Contact = ({ isHome }) => (
-  <WrapperStyles className="contact-wrapper" isHome={isHome}>
+  <ContactWrapperStyles className="contact-wrapper" isHome={isHome}>
     <h2 className="title">Interested in doing a project together?</h2>
     <div className="line" />
     <Button isDark={false} to="/contact/" value="Contact Me" />
-  </WrapperStyles>
+  </ContactWrapperStyles>
 );
 
 export default Contact;

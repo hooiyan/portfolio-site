@@ -1,24 +1,14 @@
+const data = require('./src/content/data.json');
+
 exports.createPages = ({ actions }) => {
   const { createPage } = actions;
 
-  // pull in or use whatever data
-  const dogData = [
-    {
-      name: 'Fido',
-      breed: 'Sheltie',
-    },
-    {
-      name: 'Sparky',
-      breed: 'Corgi',
-    },
-  ];
-
   // loop through data and create pages
-  dogData.forEach((dog) => {
+  data.forEach((project) => {
     createPage({
-      path: `portfolio/${dog.name}`,
+      path: `portfolio/${project.slug}`,
       component: require.resolve(`./src/templates/ProjectTemplate.jsx`),
-      context: { dog },
+      context: { project },
     });
   });
 };

@@ -1,37 +1,36 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import device from '../styles/Breakpoints';
-import Button from './Button';
 import Border from './Border';
+import Button from './Button';
 
 const WrapperStyles = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: var(--color-primary-grayish-blue-hex);
-  margin-left: ${(props) => (props.isEven ? '0' : '12.5rem')};
   margin-right: ${(props) => (props.isEven ? '12.5rem' : '0')};
+  margin-left: ${(props) => (props.isEven ? '0' : '12.5rem')};
   width: ${(props) => (props.isAbout ? '34.5%' : '34.5%')};
   height: ${(props) => (props.isAbout ? '60rem' : '50rem')};
 
   @media ${device.laptopM} {
-    margin-left: ${(props) => (props.isEven ? '0' : '8.5rem')};
     margin-right: ${(props) => (props.isEven ? '8.5rem' : '0')};
+    margin-left: ${(props) => (props.isEven ? '0' : '8.5rem')};
     width: ${(props) => (props.isAbout ? '50%' : '50%')};
   }
 
   @media ${device.tablet} {
     height: ${(props) => (!props.isAbout ? '41.8rem' : '60rem')};
-    margin-left: ${(props) => (props.isEven ? '0' : '6.9rem')};
     margin-right: ${(props) => (props.isEven ? '6.9rem' : '0')};
+    margin-left: ${(props) => (props.isEven ? '0' : '6.9rem')};
   }
 
   @media ${device.tabletM} {
     margin-top: 3.2rem;
-    margin-left: 0;
     margin-right: 0;
-    height: fit-content;
+    margin-left: 0;
     width: 100%;
   }
 
@@ -56,13 +55,13 @@ const CardText = ({ isAbout, isEven = false, text, title, to, value }) => (
     isAbout={isAbout}
     isEven={isEven}
   >
-    <Border top />
+    <Border />
     <div className="details">
       <h2 className="card-title">{title}</h2>
       <p className="card-text">{text}</p>
       <Button to={to} value={value} />
     </div>
-    <Border bottom />
+    <Border />
   </WrapperStyles>
 );
 

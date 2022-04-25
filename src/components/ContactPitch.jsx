@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Intro from '../content/intro.json';
+import intro from '../content/intro.json';
 import device from '../styles/Breakpoints';
 import SocialNetwork from './SocialNetwork';
 
@@ -24,7 +24,7 @@ const WrapperStyles = styled.section`
 
 const ContactPitch = () => (
   <WrapperStyles>
-    <p>{Intro.contact}</p>
+    <p>{intro.contact}</p>
     <SocialNetwork fill="var(--color-primary-grayish-blue-hex)" />
   </WrapperStyles>
 );

@@ -9,6 +9,8 @@ import ProjectPart from '../components/ProjectPart';
 import ProjectRight from '../components/ProjectRight';
 import TwoColumn from '../components/TwoColumn';
 import device from '../styles/Breakpoints';
+import Seo from '../components/Seo';
+import { capitalize } from '../utils';
 
 const WrapperStyles = styled.section`
   .image-wrapper {
@@ -24,8 +26,9 @@ const WrapperStyles = styled.section`
   }
 `;
 
-const ProjectTemplate = ({ pageContext: { dog } }) => (
+const ProjectTemplate = ({ pageContext: { project } }) => (
   <WrapperStyles className="single-project-wrapper">
+    <Seo title={capitalize(project.slug)} />
     <HeroImage />
     <TwoColumn isProject>
       <ProjectLeft />
