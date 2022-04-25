@@ -59,7 +59,7 @@ const Contact = ({ isHome }) => (
   <WrapperStyles className="contact-wrapper" isHome={isHome}>
     <h2 className="title">Interested in doing a project together?</h2>
     <div className="line" />
-    <Button to="/contact/" value="Contact Me" />
+    <Button isDark={false} to="/contact/" value="Contact Me" />
   </WrapperStyles>
 );
 

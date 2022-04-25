@@ -29,7 +29,8 @@ const FormStyles = styled.form`
 
   input,
   textarea {
-    background-color: rgba(32, 58, 76, 0.1);
+    /* background-color: rgba(32, 58, 76, 0.1); */
+    background-color: var(--color-secondary-light-gray-hex);
     border: none;
     font-family: 'PublicSans';
     padding: 1.65rem 1.6rem;
@@ -53,65 +54,81 @@ const FormStyles = styled.form`
   }
 `;
 
-const ContactForm = () => (
-  <FormStyles
-    id="contact"
-    name="contact-form"
-    method="post"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-  >
-    <input type="hidden" name="form-name" value="contact-form" />
+const ContactForm = () => {
+  // TODO: Add form validation
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [message, setMessage] = React.useState('');
 
-    <div>
-      <label htmlFor="name" name="name">
-        Name
-      </label>
-      <br />
-      <input
-        type="text"
-        id="name"
-        name="name"
-        aria-label="Name"
-        placeholder="Jane Appleseed"
-        required
-      />
-      <br />
-    </div>
+  const handleOnChange = (e) => {
+    if (name === '' && email === '' && message === '') {
+      console.log('please fill in the form');
+    }
+  };
 
-    <div>
-      <label htmlFor="email" name="email">
-        Email Address
-      </label>
-      <br />
-      <input
-        type="email"
-        id="email"
-        name="email"
-        aria-label="Email"
-        placeholder="email@example.com"
-        required
-      />
-      <br />
-    </div>
+  return (
+    <FormStyles
+      id="contact"
+      name="contact-form"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="contact-form" />
 
-    <div>
-      <label htmlFor="message" name="message">
-        Message
-      </label>
-      <br />
-      <textarea
-        id="message"
-        name="message"
-        aria-label="Message"
-        rows="4"
-        placeholder="How can I help?"
-        required
-      />
-      <br />
-    </div>
-    <ButtonSubmit isDark value="Send Message" />
-  </FormStyles>
-);
+      <div>
+        <label htmlFor="name" name="name">
+          Name
+        </label>
+        <br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          aria-label="Name"
+          placeholder="Jane Appleseed"
+          required
+          onChange={handleOnChange}
+        />
+        <br />
+      </div>
+
+      <div>
+        <label htmlFor="email" name="email">
+          Email Address
+        </label>
+        <br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          aria-label="Email"
+          placeholder="email@example.com"
+          required
+          onChange={handleOnChange}
+        />
+        <br />
+      </div>
+
+      <div>
+        <label htmlFor="message" name="message">
+          Message
+        </label>
+        <br />
+        <textarea
+          id="message"
+          name="message"
+          aria-label="Message"
+          rows="4"
+          placeholder="How can I help?"
+          required
+          onChange={handleOnChange}
+        />
+        <br />
+      </div>
+      <ButtonSubmit isDark className="submit-btn" value="Send Message" />
+    </FormStyles>
+  );
+};
 
 export default ContactForm;

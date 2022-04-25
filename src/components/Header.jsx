@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import device from '../styles/Breakpoints';
 import Logo from './icons/Logo';
 import Nav from './Nav';
@@ -31,7 +32,9 @@ const HeaderStyles = styled.header`
 
 const Header = () => (
   <HeaderStyles className="header-wrapper">
-    <Logo fill="var(--color-primary-grayish-blue-hex)" />
+    <Link to="/">
+      <Logo fill="var(--color-primary-grayish-blue-hex)" />
+    </Link>
     <Nav />
   </HeaderStyles>
 );

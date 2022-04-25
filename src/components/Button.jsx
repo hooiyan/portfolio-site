@@ -12,11 +12,15 @@ const ButtonStyles = styled(Link)`
   cursor: pointer;
   font-size: 1.2rem;
   letter-spacing: 2px;
-  padding: 1.6rem 3.6rem 1.6rem 3.2rem;
+  /* padding: 1.6rem 3.6rem 1.6rem 3.2rem; */
+  padding: 1.6rem 3.2rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   flex-shrink: 0;
+  height: 100%;
+  /* height: 4.8rem;
+  width: 17.8rem; */
 
   &:hover {
     background-color: ${(props) =>
@@ -30,16 +34,11 @@ const ButtonStyles = styled(Link)`
   }
 `;
 
-const Button = ({ isDark, to, value }) => (
-  <ButtonStyles isDark={isDark} to={to}>
-    {value}
-  </ButtonStyles>
-);
+const Button = ({ to, value }) => <ButtonStyles to={to}>{value}</ButtonStyles>;
 
 export default Button;
 
 Button.propTypes = {
-  isDark: PropTypes.bool.isRequired,
   to: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };

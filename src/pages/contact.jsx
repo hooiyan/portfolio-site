@@ -8,12 +8,14 @@ const ContactPage = () => (
   <>
     <section>
       <Border />
-      <TwoColumn title="Get In Touch">
+      <TwoColumn>
+        <h2 className="title">Get In Touch</h2>
         <ContactPitch />
       </TwoColumn>
       <Border />
     </section>
-    <TwoColumn title="Contact Me">
+    <TwoColumn>
+      <h2 className="title">Contact Me</h2>
       <ContactForm />
     </TwoColumn>
   </>

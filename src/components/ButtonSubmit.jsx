@@ -29,8 +29,8 @@ const ButtonStyles = styled.button`
   }
 `;
 
-const ButtonSubmit = ({ isDark, to, value }) => (
-  <ButtonStyles type="submit" isDark={isDark} to={to}>
+const ButtonSubmit = ({ isDark, value }) => (
+  <ButtonStyles type="submit" isDark={isDark}>
     {value}
   </ButtonStyles>
 );
@@ -39,6 +39,5 @@ export default ButtonSubmit;
 
 ButtonSubmit.propTypes = {
   isDark: PropTypes.bool.isRequired,
-  to: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };

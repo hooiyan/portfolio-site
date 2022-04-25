@@ -1,44 +1,30 @@
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
-
-// export const query = graphql`
-//   query {
-//     allFile(filter: { sourceInstanceName: { eq: "images" } }) {
-//       edges {
-//         node {
-//           childImageSharp {
-//             gatsbyImageData(placeholder: TRACED_SVG)
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
 
 export const query = graphql`
   query {
     bookmark: file(name: { eq: "bookmark" }) {
       childImageSharp {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
     fylo: file(name: { eq: "fylo" }) {
       childImageSharp {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
     manage: file(name: { eq: "manage" }) {
       childImageSharp {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
     insure: file(name: { eq: "insure" }) {
       childImageSharp {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
   }
