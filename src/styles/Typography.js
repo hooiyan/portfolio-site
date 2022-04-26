@@ -1,3 +1,4 @@
+import '@fontsource/overpass';
 import { createGlobalStyle } from 'styled-components';
 import HeadingBold from '../fonts/IbarraRealNova-Bold.ttf';
 import HeadingRegular from '../fonts/IbarraRealNova-Regular.ttf';

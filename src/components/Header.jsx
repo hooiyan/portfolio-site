@@ -7,6 +7,7 @@ import Nav from './Nav';
 
 const HeaderStyles = styled.header`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-top: var(--lg-global-spacing-vertical);
   padding-bottom: calc(var(--lg-global-spacing-vertical) - 1rem);
@@ -28,12 +29,20 @@ const HeaderStyles = styled.header`
     padding-right: var(--sm-global-spacing-horizontal);
     padding-left: var(--sm-global-spacing-horizontal);
   }
+
+  .logo {
+    color: var(--color-primary-grayish-blue-hex);
+    font-size: 2rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
 `;
 
 const Header = () => (
   <HeaderStyles className="header-wrapper">
-    <Link to="/">
-      <Logo fill="var(--color-primary-grayish-blue-hex)" />
+    <Link to="/" className="logo">
+      {/* <Logo fill="var(--color-primary-grayish-blue-hex)" /> */}
+      HY
     </Link>
     <Nav />
   </HeaderStyles>

@@ -5,10 +5,11 @@ import styled from 'styled-components';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
 import Seo from '../components/Seo';
+import portfolio from '../content/portfolio.json';
 
 export const query = graphql`
   query {
-    bookmark: file(name: { eq: "bookmark" }) {
+    entertainment: file(name: { eq: "entertainment" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
@@ -31,7 +32,7 @@ export const query = graphql`
   }
 `;
 
-const WrapperStyles = styled.section`
+const PortfolioPageStyles = styled.section`
   display: flex;
   flex-direction: column;
   row-gap: 8rem;
@@ -39,8 +40,21 @@ const WrapperStyles = styled.section`
 `;
 
 const PortfolioPage = ({ data }) => (
-  <WrapperStyles>
+  <PortfolioPageStyles>
     <Seo title="Portfolio" />
+    {/* {portfolio.map({alt, demo, description, id, image, slug, title}) =>  */}
+    {portfolio.map(({ alt, description, id, image, slug, title }) => (
+      <CardWrapper
+        alt={alt}
+        id={id}
+        isEven={id % 2 === 0}
+        src={data.entertainment}
+        text={description}
+        title={title}
+        to={`/portfolio/${slug}`}
+        value="View Project"
+      />
+    ))}
     <CardWrapper
       alt="screenshot of project 1"
       id="project1"
@@ -55,7 +69,7 @@ const PortfolioPage = ({ data }) => (
       alt="screenshot of project 1"
       id="project1"
       isEven
-      src={data.bookmark}
+      src={data.entertainment}
       text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
       title="Bookmark"
       to="/portfolio/Fido/"
@@ -82,7 +96,7 @@ const PortfolioPage = ({ data }) => (
       value="View Project"
     />
     <Contact />
-  </WrapperStyles>
+  </PortfolioPageStyles>
 );
 
 export default PortfolioPage;

@@ -1,0 +1,20 @@
+[
+  {
+    "alt": "Next.js Entertainment Web App",
+    "demo": "https://h2y-entertainment.vercel.app/",
+    "description": "An entertainment web app built with Next.js and TailwindCSS that allows users to search for movies and tv shows.",
+    "id": 1,
+    "image": "entertainment",
+    "slug": "entertainment",
+    "title": "Entertainment"
+  },
+  {
+    "alt": "React Todo Web App",
+    "demo": "https://h2y-todo.vercel.app/",
+    "description": "A web app that allows users to create, edit, and delete to-do items.",
+    "id": 2,
+    "image": "todo",
+    "slug": "todo",
+    "title": "Todo"
+  }
+]

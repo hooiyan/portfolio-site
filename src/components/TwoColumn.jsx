@@ -15,6 +15,7 @@ const TwoColumnStyles = styled.section`
   }
 
   .title {
+    color: var(--color-primary-grayish-blue-hex);
     margin-bottom: 2.4rem;
     text-transform: capitalize;
     width: 31.5%;
