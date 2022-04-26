@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
-import Contact from './Contact';
-import HeroImage from './HeroImage';
-import MDXComponents from './MDXComponents';
-import ProjectLeft from './ProjectLeft';
-import ProjectNavigation from './ProjectNavigation';
-import ProjectRight from './ProjectRight';
-import Seo from './Seo';
-import TwoColumn from './TwoColumn';
+import Contact from '../components/Contact';
+import HeroImage from '../components/HeroImage';
+import MDXComponents from '../components/MDXComponents';
+import ProjectLeft from '../components/ProjectLeft';
+import ProjectNavigation from '../components/ProjectNavigation';
+import ProjectRight from '../components/ProjectRight';
+import Seo from '../components/Seo';
+import TwoColumn from '../components/TwoColumn';
 
 const ProjectLayoutStyles = styled.section`
   .image-wrapper {
@@ -27,11 +27,10 @@ const ProjectLayoutStyles = styled.section`
   }
 `;
 
-const ProjectPageLayout = ({ data: { mdx }, pageContext }) => (
+const ProjectLayout = ({ data: { mdx }, pageContext }) => (
   <ProjectLayoutStyles className="single-project-wrapper">
-    {console.log(pageContext)}
     <Seo />
-    <HeroImage />
+    <HeroImage isProject src={mdx.frontmatter.hero} />
     <TwoColumn isProject>
       <ProjectLeft
         githubLink={mdx.frontmatter.githubLink}
@@ -51,10 +50,10 @@ const ProjectPageLayout = ({ data: { mdx }, pageContext }) => (
   </ProjectLayoutStyles>
 );
 
-export default ProjectPageLayout;
+export default ProjectLayout;
 
 export const pageQuery = graphql`
-  query PortfolioQuery($id: String) {
+  query ProjectQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
       body
@@ -74,7 +73,7 @@ export const pageQuery = graphql`
   }
 `;
 
-ProjectPageLayout.propTypes = {
+ProjectLayout.propTypes = {
   data: PropTypes.object,
   pageContext: PropTypes.object,
 };

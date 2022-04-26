@@ -9,22 +9,22 @@ import p from '../content/preview.json';
 
 export const query = graphql`
   query {
-    entertainment: file(name: { eq: "entertainment" }) {
+    entertainment: file(name: { eq: "preview-entertainment" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
-    todo: file(name: { eq: "todo" }) {
+    todo: file(name: { eq: "preview-todo" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
-    advice: file(name: { eq: "advice" }) {
+    advice: file(name: { eq: "preview-advice" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
-    typemaster: file(name: { eq: "typemaster" }) {
+    typemaster: file(name: { eq: "preview-typemaster" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
