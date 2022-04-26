@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
 import Seo from '../components/Seo';
-import p from '../content/portfolio.json';
+import p from '../content/preview.json';
 
 export const query = graphql`
   query {

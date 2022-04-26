@@ -1,18 +1,17 @@
-import { MDXProvider } from '@mdx-js/react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import device from '../styles/Breakpoints';
 import Contact from './Contact';
 import HeroImage from './HeroImage';
+import MDXComponents from './MDXComponents';
 import ProjectLeft from './ProjectLeft';
 import ProjectNavigation from './ProjectNavigation';
 import ProjectRight from './ProjectRight';
 import Seo from './Seo';
 import TwoColumn from './TwoColumn';
-import MDXComponents from './MDXComponents';
 
 const ProjectLayoutStyles = styled.section`
   .image-wrapper {
@@ -27,8 +26,6 @@ const ProjectLayoutStyles = styled.section`
     }
   }
 `;
-
-const shortcodes = { Link }; // Provide common components here
 
 const ProjectPageLayout = ({ data: { mdx }, pageContext }) => (
   <ProjectLayoutStyles className="single-project-wrapper">
@@ -79,4 +76,5 @@ export const pageQuery = graphql`
 
 ProjectPageLayout.propTypes = {
   data: PropTypes.object,
+  pageContext: PropTypes.object,
 };
