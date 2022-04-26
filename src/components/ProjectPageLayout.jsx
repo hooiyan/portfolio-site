@@ -34,7 +34,13 @@ const ProjectPageLayout = ({ data: { mdx } }) => (
     <Seo />
     <HeroImage />
     <TwoColumn isProject>
-      <ProjectLeft />
+      <ProjectLeft
+        githubLink={mdx.frontmatter.githubLink}
+        liveDemo={mdx.frontmatter.liveDemo}
+        summary={mdx.frontmatter.summary}
+        tags={mdx.frontmatter.tags}
+        title={mdx.frontmatter.title}
+      />
       <ProjectRight>
         <MDXProvider components={shortcodes}>
           <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
@@ -54,7 +60,16 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
+        githubLink
+        liveDemo
+        summary
+        tags
         title
+        hero {
+          childImageSharp {
+            gatsbyImageData(placeholder: TRACED_SVG)
+          }
+        }
       }
     }
   }

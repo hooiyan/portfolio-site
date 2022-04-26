@@ -14,7 +14,7 @@ const TagStyles = styled(Link)`
   text-decoration: none;
 `;
 
-const Tag = ({ text, to }) => <TagStyles to={to}>{text}</TagStyles>;
+const Tag = ({ text, to }) => <TagStyles to={`/tag/${to}`}>{text}</TagStyles>;
 
 export default Tag;
 

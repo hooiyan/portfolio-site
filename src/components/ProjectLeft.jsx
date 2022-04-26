@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
@@ -45,25 +46,20 @@ const ProjectLeftStyles = styled.section`
   }
 `;
 
-const ProjectLeft = () => (
+const ProjectLeft = ({ githubLink, liveDemo, summary, tags, title }) => (
   <ProjectLeftStyles>
     <Border />
     <div className="wrapper">
-      <h2 className="title">Manage</h2>
-      <p className="summary">
-        An entertainment web app built with Next.js and TailwindCSS that allows
-        users to search for movies and tv shows.
-      </p>
+      <h2 className="title">{title}</h2>
+      <p className="summary">{summary}</p>
       <div className="upper">
-        <Tag text="Next.js" to="/tag/nextjs" />
-        <Tag text="TailwindCSS" to="/tag/tailwindcss" />
-        <Tag text="API" to="/tag/api" />
-        <Tag text="SWR" to="/tag/swr" />
-        <Tag text="TMDB" to="/tag/tmdb" />
+        {tags.map((tag, index) => (
+          <Tag key={index} text={tag} to={tag.toLowerCase()} />
+        ))}
       </div>
       <div className="lower">
-        <Button value="Visit Website" to="/" />
-        <Button value="View Code" to="/" />
+        <Button isExternal value="Visit Website" to={liveDemo} />
+        <Button isExternal value="View Code" to={githubLink} />
       </div>
     </div>
     <Border />
@@ -71,3 +67,11 @@ const ProjectLeft = () => (
 );
 
 export default ProjectLeft;
+
+ProjectLeft.propTypes = {
+  githubLink: PropTypes.string.isRequired,
+  liveDemo: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
+};
