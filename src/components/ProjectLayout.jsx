@@ -12,8 +12,9 @@ import ProjectNavigation from './ProjectNavigation';
 import ProjectRight from './ProjectRight';
 import Seo from './Seo';
 import TwoColumn from './TwoColumn';
+import MDXComponents from './MDXComponents';
 
-const ProjectTemplateStyles = styled.section`
+const ProjectLayoutStyles = styled.section`
   .image-wrapper {
     height: 50rem;
 
@@ -29,8 +30,9 @@ const ProjectTemplateStyles = styled.section`
 
 const shortcodes = { Link }; // Provide common components here
 
-const ProjectPageLayout = ({ data: { mdx } }) => (
-  <ProjectTemplateStyles className="single-project-wrapper">
+const ProjectPageLayout = ({ data: { mdx }, pageContext }) => (
+  <ProjectLayoutStyles className="single-project-wrapper">
+    {console.log(pageContext)}
     <Seo />
     <HeroImage />
     <TwoColumn isProject>
@@ -42,14 +44,14 @@ const ProjectPageLayout = ({ data: { mdx } }) => (
         title={mdx.frontmatter.title}
       />
       <ProjectRight>
-        <MDXProvider components={shortcodes}>
+        <MDXComponents>
           <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
-        </MDXProvider>
+        </MDXComponents>
       </ProjectRight>
     </TwoColumn>
     <ProjectNavigation />
     <Contact />
-  </ProjectTemplateStyles>
+  </ProjectLayoutStyles>
 );
 
 export default ProjectPageLayout;

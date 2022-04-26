@@ -47,7 +47,7 @@ const PortfolioPage = ({ data }) => {
       <Seo title="Portfolio" />
       <CardWrapper
         alt={p[0].alt}
-        id={p[0].id}
+        id={p[0].id.toString()}
         isEven={p[0].id % 2 === 0}
         src={entertainment}
         text={p[0].description}
@@ -57,7 +57,7 @@ const PortfolioPage = ({ data }) => {
       />
       <CardWrapper
         alt={p[1].alt}
-        id={p[1].id}
+        id={p[1].id.toString()}
         isEven={p[1].id % 2 === 0}
         src={todo}
         text={p[1].description}
@@ -67,7 +67,7 @@ const PortfolioPage = ({ data }) => {
       />
       <CardWrapper
         alt={p[2].alt}
-        id={p[2].id}
+        id={p[2].id.toString()}
         isEven={p[2].id % 2 === 0}
         src={advice}
         text={p[2].description}
@@ -77,7 +77,7 @@ const PortfolioPage = ({ data }) => {
       />
       <CardWrapper
         alt={p[3].alt}
-        id={p[3].id}
+        id={p[3].id.toString()}
         isEven={p[3].id % 2 === 0}
         src={typemaster}
         text={p[3].description}
