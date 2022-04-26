@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const WrapperStyles = styled.section`
+const ProjectPartStyles = styled.section`
   margin-bottom: 4rem;
 
   h3 {
@@ -22,15 +22,15 @@ const WrapperStyles = styled.section`
 `;
 
 const ProjectPart = ({ title, text }) => (
-  <WrapperStyles>
+  <ProjectPartStyles>
     <h3>{title}</h3>
     <p>{text}</p>
-  </WrapperStyles>
+  </ProjectPartStyles>
 );
 
 export default ProjectPart;
 
 ProjectPart.propTypes = {
-  title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };

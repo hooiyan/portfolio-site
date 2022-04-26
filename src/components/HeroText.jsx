@@ -4,21 +4,21 @@ import device from '../styles/Breakpoints';
 import ButtonIcon from './ButtonIcon';
 import intro from '../content/intro.json';
 
-const WrapperStyles = styled.section`
+const HeroTextStyles = styled.section`
   background-color: rgba(234, 234, 235, 0.8);
   border: none;
   padding-top: 5.6rem;
   padding-right: 3rem;
-  width: 48rem;
   position: absolute;
   bottom: 0;
+  width: 48rem;
 
   @media ${device.tabletS} {
     background-color: var(--color-secondary-very-light-gray-hex);
     padding-top: 2.4rem;
     padding-right: 0;
-    width: auto;
     position: static;
+    width: auto;
   }
 
   .hero-introduction {
@@ -43,10 +43,10 @@ const WrapperStyles = styled.section`
 `;
 
 const HeroText = () => (
-  <WrapperStyles className="hero-text-wrapper">
+  <HeroTextStyles className="hero-text-wrapper">
     <h1 className="hero-introduction">{intro.short}</h1>
     <ButtonIcon />
-  </WrapperStyles>
+  </HeroTextStyles>
 );
 
 export default HeroText;

@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 
-const WrapperStyles = styled.section`
+const ProjectRightStyles = styled.section`
   width: var(--right-column-initial-width);
 
   @media ${device.laptopS} {
@@ -16,7 +16,7 @@ const WrapperStyles = styled.section`
 `;
 
 const ProjectRight = ({ children }) => (
-  <WrapperStyles>{children}</WrapperStyles>
+  <ProjectRightStyles>{children}</ProjectRightStyles>
 );
 
 export default ProjectRight;

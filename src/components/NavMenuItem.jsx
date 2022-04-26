@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-const MenuItemStyles = styled.li`
+const NavMenuItemStyles = styled.li`
   font-size: var(--menu-item-size);
   letter-spacing: 2px;
   list-style: none;
@@ -14,7 +14,7 @@ const MenuItemStyles = styled.li`
 `;
 
 const MenuItem = ({ children }) => (
-  <MenuItemStyles className="menu-item">{children}</MenuItemStyles>
+  <NavMenuItemStyles className="menu-item">{children}</NavMenuItemStyles>
 );
 
 export default MenuItem;

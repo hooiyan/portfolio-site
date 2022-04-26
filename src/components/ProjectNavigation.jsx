@@ -1,16 +1,15 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import device from '../styles/Breakpoints';
 import IconLeftArrow from './icons/IconLeftArrow';
 import IconRightArrow from './icons/IconRightArrow';
-import device from '../styles/Breakpoints';
-import VerticalDivider from './VerticalDivider';
 
-const NavigationWrapperStyles = styled.section`
+const ProjectNavigationStyles = styled.section`
   display: flex;
   justify-content: space-between;
-  margin-bottom: calc(11.5rem - 1.6rem);
   height: 100%;
+  margin-bottom: calc(11.5rem - 1.6rem);
 
   @media ${device.tabletM} {
     flex-direction: column;
@@ -34,36 +33,35 @@ const ChildStyles = styled(Link)`
   }
 
   &.previous-wrapper {
-    border-left: 0;
     border-right: 0;
+    border-left: 0;
 
     @media ${device.tabletM} {
-      flex-direction: column;
       align-items: flex-start;
+      flex-direction: column;
       border-top: 1px solid rgba(51, 50, 61, 0.15);
       border-bottom: 1px solid rgba(51, 50, 61, 0.15);
     }
   }
 
   &.next-wrapper {
-    /* border-left: 0; */
     border-right: 0;
     justify-content: flex-end;
 
     @media ${device.tabletM} {
-      border-bottom: 1px solid rgba(51, 50, 61, 0.15);
-      flex-direction: column-reverse;
       align-items: flex-end;
+      flex-direction: column-reverse;
+      border-bottom: 1px solid rgba(51, 50, 61, 0.15);
     }
   }
 
   .previous-text {
-    margin-left: 3.2rem;
     margin-right: 1.6rem;
+    margin-left: 3.2rem;
 
     @media ${device.tabletM} {
-      margin-left: 0;
       margin-top: 1.6rem;
+      margin-left: 0;
     }
   }
 
@@ -73,8 +71,8 @@ const ChildStyles = styled(Link)`
     text-align: right;
 
     @media ${device.tabletM} {
-      margin-right: 0;
       margin-top: 1.6rem;
+      margin-right: 0;
     }
   }
 
@@ -84,7 +82,7 @@ const ChildStyles = styled(Link)`
 `;
 
 const ProjectNavigation = () => (
-  <NavigationWrapperStyles>
+  <ProjectNavigationStyles>
     <ChildStyles to="/portfolio/" className="previous-wrapper">
       <IconLeftArrow />
       <div className="previous-text">
@@ -92,7 +90,6 @@ const ProjectNavigation = () => (
         <p>Previous Project</p>
       </div>
     </ChildStyles>
-    {/* <VerticalDivider /> */}
     <ChildStyles to="/portfolio/" className="next-wrapper">
       <div className="next-text">
         <h3>Entertainment</h3>
@@ -100,7 +97,7 @@ const ProjectNavigation = () => (
       </div>
       <IconRightArrow />
     </ChildStyles>
-  </NavigationWrapperStyles>
+  </ProjectNavigationStyles>
 );
 
 export default ProjectNavigation;

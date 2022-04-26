@@ -4,6 +4,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ButtonStyles = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   background-color: ${(props) =>
     props.isDark ? 'var(--color-primary-dark-blue-hex)' : 'transparent'};
   border: 1px solid var(--color-primary-grayish-blue-hex);
@@ -12,15 +16,11 @@ const ButtonStyles = styled(Link)`
   cursor: pointer;
   font-size: 1.2rem;
   letter-spacing: 2px;
-  /* padding: 1.6rem 3.6rem 1.6rem 3.2rem; */
-  padding: 1.6rem 3.2rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  flex-shrink: 0;
-  height: 100%;
-  /* height: 4.8rem;
-  width: 17.8rem; */
+  height: 4.8rem;
+  width: 17.8rem;
 
   &:hover {
     background-color: ${(props) =>

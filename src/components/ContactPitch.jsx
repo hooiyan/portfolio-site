@@ -4,7 +4,7 @@ import intro from '../content/intro.json';
 import device from '../styles/Breakpoints';
 import SocialNetwork from './SocialNetwork';
 
-const WrapperStyles = styled.section`
+const ContactPitchStyles = styled.section`
   width: var(--right-column-initial-width);
 
   @media ${device.laptopS} {
@@ -17,16 +17,16 @@ const WrapperStyles = styled.section`
 
   p {
     color: var(--color-primary-grayish-blue-hex);
-    opacity: 0.8;
     margin-bottom: 2.4rem;
+    opacity: 0.8;
   }
 `;
 
 const ContactPitch = () => (
-  <WrapperStyles>
+  <ContactPitchStyles>
     <p>{intro.contact}</p>
     <SocialNetwork fill="var(--color-primary-grayish-blue-hex)" />
-  </WrapperStyles>
+  </ContactPitchStyles>
 );
 
 export default ContactPitch;

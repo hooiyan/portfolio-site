@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import Border from './Border';
-import CardImage from './CardImage';
 import Button from './Button';
 import Tag from './Tag';
 
-const WrapperStyles = styled.section`
+const ProjectLeftStyles = styled.section`
   margin-bottom: 4rem;
   width: 31.5%;
 
@@ -41,13 +40,13 @@ const WrapperStyles = styled.section`
     color: var(--color-primary-grayish-blue-hex);
     font-size: var(--body-2-size);
     line-height: var(--body-line-height);
-    opacity: 0.8;
     margin-bottom: 2.4rem;
+    opacity: 0.8;
   }
 `;
 
 const ProjectLeft = () => (
-  <WrapperStyles>
+  <ProjectLeftStyles>
     <Border />
     <div className="wrapper">
       <h2 className="title">Manage</h2>
@@ -69,8 +68,7 @@ const ProjectLeft = () => (
       </div>
     </div>
     <Border />
-    {/* <CardImage /> */}
-  </WrapperStyles>
+  </ProjectLeftStyles>
 );
 
 export default ProjectLeft;

@@ -21,8 +21,8 @@ const CardWrapperStyles = styled.section`
   }
 
   .image-wrapper {
-    width: 53.2%;
     height: ${(props) => (props.isAbout ? '60rem' : '50rem')};
+    width: 53.2%;
 
     @media ${device.laptopM} {
       width: 45%;

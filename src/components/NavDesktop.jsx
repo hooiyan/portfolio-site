@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import NavMenuItem from './NavMenuItem';
 
-const DesktopWrapperStyles = styled.ul`
+const NavDesktopStyles = styled.ul`
   display: flex;
   column-gap: 4.2rem;
 
@@ -18,7 +18,7 @@ const DesktopWrapperStyles = styled.ul`
 `;
 
 const NavDesktop = () => (
-  <DesktopWrapperStyles className="desktop-nav">
+  <NavDesktopStyles className="desktop-nav">
     <NavMenuItem>
       <Link to="/" activeStyle={{ color: `var(--color-primary-cyan-hex)` }}>
         Home
@@ -41,7 +41,7 @@ const NavDesktop = () => (
         Contact Me
       </Link>
     </NavMenuItem>
-  </DesktopWrapperStyles>
+  </NavDesktopStyles>
 );
 
 export default NavDesktop;

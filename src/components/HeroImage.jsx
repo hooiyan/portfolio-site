@@ -3,11 +3,12 @@ import React from 'react';
 
 const HeroImage = () => (
   <StaticImage
-    src="../images/wall.png"
-    alt="hooiyan's latest project screenshot"
+    alt="latest project screenshot"
     className="image-wrapper"
     imgClassName="image"
     layout="fullWidth"
+    placeholder="TRACED_SVG"
+    src="../images/hero.png"
   />
 );
 

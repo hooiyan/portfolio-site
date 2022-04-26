@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import ButtonSubmit from './ButtonSubmit';
 
-const FormStyles = styled.form`
+const ContactFormStyles = styled.form`
   width: var(--right-column-initial-width);
 
   @media ${device.laptopS} {
@@ -23,13 +23,12 @@ const FormStyles = styled.form`
     font-family: 'PublicSans';
     font-size: 1.3rem;
     font-weight: var(--font-bold);
-    opacity: 0.8;
     margin-bottom: 0.8rem;
+    opacity: 0.8;
   }
 
   input,
   textarea {
-    /* background-color: rgba(32, 58, 76, 0.1); */
     background-color: var(--color-secondary-light-gray-hex);
     border: none;
     font-family: 'PublicSans';
@@ -67,12 +66,12 @@ const ContactForm = () => {
   };
 
   return (
-    <FormStyles
+    <ContactFormStyles
       id="contact"
-      name="contact-form"
-      method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      method="post"
+      name="contact-form"
     >
       <input type="hidden" name="form-name" value="contact-form" />
 
@@ -82,13 +81,13 @@ const ContactForm = () => {
         </label>
         <br />
         <input
-          type="text"
+          aria-label="Name"
           id="name"
           name="name"
-          aria-label="Name"
+          onChange={handleOnChange}
           placeholder="Jane Appleseed"
           required
-          onChange={handleOnChange}
+          type="text"
         />
         <br />
       </div>
@@ -99,13 +98,13 @@ const ContactForm = () => {
         </label>
         <br />
         <input
-          type="email"
+          aria-label="Email"
           id="email"
           name="email"
-          aria-label="Email"
+          onChange={handleOnChange}
           placeholder="email@example.com"
           required
-          onChange={handleOnChange}
+          type="email"
         />
         <br />
       </div>
@@ -116,18 +115,18 @@ const ContactForm = () => {
         </label>
         <br />
         <textarea
+          aria-label="Message"
           id="message"
           name="message"
-          aria-label="Message"
-          rows="4"
+          onChange={handleOnChange}
           placeholder="How can I help?"
           required
-          onChange={handleOnChange}
+          rows="4"
         />
         <br />
       </div>
-      <ButtonSubmit isDark className="submit-btn" value="Send Message" />
-    </FormStyles>
+      <ButtonSubmit className="submit-btn" isDark value="Send Message" />
+    </ContactFormStyles>
   );
 };
 

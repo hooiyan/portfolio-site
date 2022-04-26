@@ -5,15 +5,15 @@ import device from '../styles/Breakpoints';
 import Border from './Border';
 import Button from './Button';
 
-const WrapperStyles = styled.section`
+const CardTextStyles = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: var(--color-primary-grayish-blue-hex);
   margin-right: ${(props) => (props.isEven ? '12.5rem' : '0')};
   margin-left: ${(props) => (props.isEven ? '0' : '12.5rem')};
-  width: ${(props) => (props.isAbout ? '34.5%' : '34.5%')};
   height: ${(props) => (props.isAbout ? '60rem' : '50rem')};
+  width: 34.5%;
 
   @media ${device.laptopM} {
     margin-right: ${(props) => (props.isEven ? '8.5rem' : '0')};
@@ -22,9 +22,9 @@ const WrapperStyles = styled.section`
   }
 
   @media ${device.tablet} {
-    height: ${(props) => (!props.isAbout ? '41.8rem' : '60rem')};
     margin-right: ${(props) => (props.isEven ? '6.9rem' : '0')};
     margin-left: ${(props) => (props.isEven ? '0' : '6.9rem')};
+    height: ${(props) => (props.isAbout ? '60rem' : '41.8rem')};
   }
 
   @media ${device.tabletM} {
@@ -50,7 +50,7 @@ const WrapperStyles = styled.section`
 `;
 
 const CardText = ({ isAbout, isEven = false, text, title, to, value }) => (
-  <WrapperStyles
+  <CardTextStyles
     className="card-text-wrapper"
     isAbout={isAbout}
     isEven={isEven}
@@ -62,7 +62,7 @@ const CardText = ({ isAbout, isEven = false, text, title, to, value }) => (
       <Button to={to} value={value} />
     </div>
     <Border />
-  </WrapperStyles>
+  </CardTextStyles>
 );
 
 export default CardText;

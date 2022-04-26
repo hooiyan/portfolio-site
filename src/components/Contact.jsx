@@ -4,19 +4,31 @@ import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import Button from './Button';
 
-const ContactWrapperStyles = styled.section`
+const ContactStyles = styled.section`
   display: flex;
   align-items: center;
   column-gap: 3.2rem;
   margin-top: ${(props) => (props.isHome ? '15rem' : '7rem')};
 
   @media ${device.tablet} {
-    margin-top: ${(props) => (props.isHome ? '9.6rem' : '1.6rem')};
+    margin-top: ${(props) => (props.isHome ? '15rem' : '1.6rem')};
   }
 
   @media ${device.tabletM} {
     flex-direction: column;
     margin-top: ${(props) => (props.isHome ? '8rem' : '0')};
+  }
+
+  @media ${device.mobileL} {
+    margin-top: ${(props) => (props.isHome ? '12rem' : '0')};
+  }
+
+  @media ${device.mobileM} {
+    margin-top: ${(props) => (props.isHome ? '15rem' : '0')};
+  }
+
+  @media ${device.mobileS} {
+    margin-top: ${(props) => (props.isHome ? '22rem' : '0')};
   }
 
   .title {
@@ -56,11 +68,11 @@ const ContactWrapperStyles = styled.section`
 `;
 
 const Contact = ({ isHome }) => (
-  <ContactWrapperStyles className="contact-wrapper" isHome={isHome}>
+  <ContactStyles className="contact-wrapper" isHome={isHome}>
     <h2 className="title">Interested in doing a project together?</h2>
     <div className="line" />
     <Button isDark={false} to="/contact/" value="Contact Me" />
-  </ContactWrapperStyles>
+  </ContactStyles>
 );
 
 export default Contact;

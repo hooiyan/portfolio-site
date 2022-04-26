@@ -4,9 +4,9 @@ import device from '../styles/Breakpoints';
 import HeroImage from './HeroImage';
 import HeroText from './HeroText';
 
-const HeroWrapperStyles = styled.section`
-  position: relative;
+const HeroStyles = styled.section`
   margin-bottom: 15rem;
+  position: relative;
 
   @media ${device.tablet} {
     margin-bottom: 9.6rem;
@@ -22,10 +22,10 @@ const HeroWrapperStyles = styled.section`
 `;
 
 const Hero = () => (
-  <HeroWrapperStyles className="hero-wrapper">
+  <HeroStyles className="hero-wrapper">
     <HeroImage />
     <HeroText />
-  </HeroWrapperStyles>
+  </HeroStyles>
 );
 
 export default Hero;

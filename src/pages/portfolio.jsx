@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
 import Seo from '../components/Seo';
-import project from '../content/data.json';
 
 export const query = graphql`
   query {
@@ -42,17 +41,6 @@ const WrapperStyles = styled.section`
 const PortfolioPage = ({ data }) => (
   <WrapperStyles>
     <Seo title="Portfolio" />
-    {project.map(({ demo, description, id, slug, title, image }) => (
-      <CardWrapper
-        alt={`screenshot of ${title}`}
-        id={id}
-        isEven={id % 2 === 0}
-        src={data.manage}
-        text={description}
-        to={`/portfolio/${slug}`}
-        value="View Project"
-      />
-    ))}
     <CardWrapper
       alt="screenshot of project 1"
       id="project1"

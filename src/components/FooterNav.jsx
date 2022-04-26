@@ -5,7 +5,7 @@ import device from '../styles/Breakpoints';
 import Logo from './icons/Logo';
 import NavMenuItem from './NavMenuItem';
 
-const WrapperStyles = styled.section`
+const FooterNavStyles = styled.section`
   display: flex;
   column-gap: 4.8rem;
 
@@ -14,8 +14,8 @@ const WrapperStyles = styled.section`
   }
 
   @media ${device.tabletS} {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     row-gap: 4rem;
   }
 
@@ -39,7 +39,7 @@ const WrapperStyles = styled.section`
 `;
 
 const FooterNav = () => (
-  <WrapperStyles className="footer-nav">
+  <FooterNavStyles className="footer-nav">
     <Logo fill="var(--white)" />
     <ul>
       <NavMenuItem>
@@ -52,7 +52,7 @@ const FooterNav = () => (
         <Link to="/contact/">Contact Me</Link>
       </NavMenuItem>
     </ul>
-  </WrapperStyles>
+  </FooterNavStyles>
 );
 
 export default FooterNav;

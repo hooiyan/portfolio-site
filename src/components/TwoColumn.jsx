@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 
-const WrapperStyles = styled.section`
+const TwoColumnStyles = styled.section`
   display: flex;
   justify-content: space-between;
   padding: ${(props) => (props.isProject ? '11.5rem 0 6.4rem 0' : '4.8rem 0')};
@@ -26,12 +26,12 @@ const WrapperStyles = styled.section`
 `;
 
 const TwoColumn = ({ isProject, children }) => (
-  <WrapperStyles isProject={isProject}>{children}</WrapperStyles>
+  <TwoColumnStyles isProject={isProject}>{children}</TwoColumnStyles>
 );
 
 export default TwoColumn;
 
 TwoColumn.propTypes = {
-  isProject: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  isProject: PropTypes.bool,
 };

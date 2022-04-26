@@ -7,12 +7,12 @@ import ProjectLeft from '../components/ProjectLeft';
 import ProjectNavigation from '../components/ProjectNavigation';
 import ProjectPart from '../components/ProjectPart';
 import ProjectRight from '../components/ProjectRight';
+import Seo from '../components/Seo';
 import TwoColumn from '../components/TwoColumn';
 import device from '../styles/Breakpoints';
-import Seo from '../components/Seo';
 import { capitalize } from '../utils';
 
-const WrapperStyles = styled.section`
+const ProjectTemplateStyles = styled.section`
   .image-wrapper {
     height: 50rem;
 
@@ -27,7 +27,7 @@ const WrapperStyles = styled.section`
 `;
 
 const ProjectTemplate = ({ pageContext: { project } }) => (
-  <WrapperStyles className="single-project-wrapper">
+  <ProjectTemplateStyles className="single-project-wrapper">
     <Seo title={capitalize(project.slug)} />
     <HeroImage />
     <TwoColumn isProject>
@@ -58,7 +58,7 @@ const ProjectTemplate = ({ pageContext: { project } }) => (
     </TwoColumn>
     <ProjectNavigation />
     <Contact />
-  </WrapperStyles>
+  </ProjectTemplateStyles>
 );
 
 export default ProjectTemplate;

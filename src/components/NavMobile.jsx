@@ -6,7 +6,7 @@ import IconClose from './icons/IconClose';
 import IconHamburger from './icons/IconHamburger';
 import NavMenuItem from './NavMenuItem';
 
-const MobileWrapperStyles = styled.div`
+const NavMobileStyles = styled.div`
   cursor: pointer;
   display: none;
   position: relative;
@@ -14,8 +14,8 @@ const MobileWrapperStyles = styled.div`
 
   @media ${device.tabletS} {
     display: flex;
-    flex-direction: column;
     align-items: flex-end;
+    flex-direction: column;
   }
 `;
 
@@ -23,19 +23,18 @@ const MenuListStyles = styled.ul`
   display: none;
 
   @media ${device.tabletS} {
-    background-color: var(--color-primary-grayish-blue-hex);
     display: flex;
-    flex-direction: column;
     align-items: space-between;
+    flex-direction: column;
     justify-content: center;
     row-gap: 3.2rem;
+    background-color: var(--color-primary-grayish-blue-hex);
     padding: var(--mobile-menu-spacing-vertical)
       var(--mobile-menu-spacing-horizontal);
-    text-align: center;
     position: absolute;
     top: calc(3.2rem + 2.4rem);
+    text-align: center;
     width: 22.3rem;
-    /* height: 18.6rem; */
   }
 
   a {
@@ -61,7 +60,7 @@ const NavMobile = () => {
   });
 
   return (
-    <MobileWrapperStyles className="mobile-nav">
+    <NavMobileStyles className="mobile-nav">
       <div
         className="toggle-button"
         onClick={() => {
@@ -111,7 +110,7 @@ const NavMobile = () => {
           </NavMenuItem>
         </MenuListStyles>
       )}
-    </MobileWrapperStyles>
+    </NavMobileStyles>
   );
 };
 

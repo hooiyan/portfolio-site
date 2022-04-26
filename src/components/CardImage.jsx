@@ -5,8 +5,8 @@ import React from 'react';
 const CardImage = ({ alt, src }) => (
   <GatsbyImage
     alt={alt}
-    image={getImage(src)}
     className="image-wrapper"
+    image={getImage(src)}
     imgClassName="image"
   />
 );

@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonStyles = styled.button`
+const ButtonSubmitStyles = styled.button`
+  flex-shrink: 0;
   background-color: ${(props) =>
     props.isDark ? 'var(--color-primary-dark-blue-hex)' : 'transparent'};
   border: 1px solid var(--color-primary-grayish-blue-hex);
@@ -15,7 +16,6 @@ const ButtonStyles = styled.button`
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  flex-shrink: 0;
 
   &:hover {
     background-color: ${(props) =>
@@ -30,9 +30,9 @@ const ButtonStyles = styled.button`
 `;
 
 const ButtonSubmit = ({ isDark, value }) => (
-  <ButtonStyles type="submit" isDark={isDark}>
+  <ButtonSubmitStyles type="submit" isDark={isDark}>
     {value}
-  </ButtonStyles>
+  </ButtonSubmitStyles>
 );
 
 export default ButtonSubmit;
