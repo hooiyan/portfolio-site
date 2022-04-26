@@ -1,20 +1,30 @@
 [
   {
     "alt": "Next.js Entertainment Web App",
-    "demo": "https://h2y-entertainment.vercel.app/",
-    "description": "An entertainment web app built with Next.js and TailwindCSS that allows users to search for movies and tv shows.",
+    "description": "An entertainment web app built with Next.js and TailwindCSS that allows users to search for movies and tv shows as well as viewing the relevant information.",
     "id": 1,
-    "image": "entertainment",
     "slug": "entertainment",
     "title": "Entertainment"
   },
   {
     "alt": "React Todo Web App",
-    "demo": "https://h2y-todo.vercel.app/",
-    "description": "A web app that allows users to create, edit, and delete to-do items.",
+    "description": "A React web app built together with Styled Components and Recoil that allows users to add, mark, and delete to-do items. The users can drag and drop to reorder the to-do items.",
     "id": 2,
-    "image": "todo",
     "slug": "todo",
     "title": "Todo"
+  },
+  {
+    "alt": "Simple Advice Generator",
+    "description": "A simple web app built with HTML, CSS, and JavaScript. The user can press on the button to generate a random advice every two seconds.",
+    "id": 3,
+    "slug": "advice",
+    "title": "Advice"
+  },
+  {
+    "alt": "Typemaster Landing Page",
+    "description": "A beautiful product landing page built with HTML and SCSS along with modern CSS practices.",
+    "id": 4,
+    "slug": "typemaster",
+    "title": "Typemaster"
   }
 ]

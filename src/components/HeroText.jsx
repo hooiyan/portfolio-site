@@ -5,7 +5,8 @@ import ButtonIcon from './ButtonIcon';
 import intro from '../content/intro.json';
 
 const HeroTextStyles = styled.section`
-  background-color: rgba(234, 234, 235, 0.8);
+  background-color: var(--color-secondary-very-light-gray-hex);
+  /* background-color: rgba(234, 234, 235, 0.8); */
   border: none;
   padding-top: 5.6rem;
   padding-right: 3rem;

@@ -51,9 +51,8 @@ const ProjectLeft = () => (
     <div className="wrapper">
       <h2 className="title">Manage</h2>
       <p className="summary">
-        This project required me to build a fully responsive landing page to the
-        designs provided. I used HTML5, along with CSS Grid and JavaScript for
-        the areas that required interactivity, such as the testimonial slider.
+        An entertainment web app built with Next.js and TailwindCSS that allows
+        users to search for movies and tv shows.
       </p>
       <div className="upper">
         <Tag text="Next.js" to="/tag/nextjs" />

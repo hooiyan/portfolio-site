@@ -33,7 +33,7 @@ const HeaderStyles = styled.header`
   .logo {
     color: var(--color-primary-grayish-blue-hex);
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
     text-decoration: none;
   }
 `;

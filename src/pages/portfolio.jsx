@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import CardWrapper from '../components/CardWrapper';
 import Contact from '../components/Contact';
 import Seo from '../components/Seo';
-import portfolio from '../content/portfolio.json';
+import p from '../content/portfolio.json';
 
 export const query = graphql`
   query {
@@ -14,17 +14,17 @@ export const query = graphql`
         gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
-    fylo: file(name: { eq: "fylo" }) {
+    todo: file(name: { eq: "todo" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
-    manage: file(name: { eq: "manage" }) {
+    advice: file(name: { eq: "advice" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
-    insure: file(name: { eq: "insure" }) {
+    typemaster: file(name: { eq: "typemaster" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG)
       }
@@ -39,65 +39,56 @@ const PortfolioPageStyles = styled.section`
   margin-top: 4rem;
 `;
 
-const PortfolioPage = ({ data }) => (
-  <PortfolioPageStyles>
-    <Seo title="Portfolio" />
-    {/* {portfolio.map({alt, demo, description, id, image, slug, title}) =>  */}
-    {portfolio.map(({ alt, description, id, image, slug, title }) => (
+const PortfolioPage = ({ data }) => {
+  const { entertainment, todo, advice, typemaster } = data;
+
+  return (
+    <PortfolioPageStyles>
+      <Seo title="Portfolio" />
       <CardWrapper
-        alt={alt}
-        id={id}
-        isEven={id % 2 === 0}
-        src={data.entertainment}
-        text={description}
-        title={title}
-        to={`/portfolio/${slug}`}
+        alt={p[0].alt}
+        id={p[0].id}
+        isEven={p[0].id % 2 === 0}
+        src={entertainment}
+        text={p[0].description}
+        title={p[0].title}
+        to={`/portfolio/${p[0].slug}`}
         value="View Project"
       />
-    ))}
-    <CardWrapper
-      alt="screenshot of project 1"
-      id="project1"
-      isEven={false}
-      src={data.manage}
-      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
-      title="Manage"
-      to="/portfolio/entertainment/"
-      value="View Project"
-    />
-    <CardWrapper
-      alt="screenshot of project 1"
-      id="project1"
-      isEven
-      src={data.entertainment}
-      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
-      title="Bookmark"
-      to="/portfolio/Fido/"
-      value="View Project"
-    />
-    <CardWrapper
-      alt="screenshot of project 1"
-      id="project1"
-      isEven={false}
-      src={data.insure}
-      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
-      title="Insure"
-      to="/portfolio/Fido/"
-      value="View Project"
-    />
-    <CardWrapper
-      alt="screenshot of project 1"
-      id="project1"
-      isEven
-      src={data.fylo}
-      text="This project required me to build a fully responsive landing page to the designs provided. I used HTML5, along with CSS Grid and JavaScript for the areas that required interacticity, such as the testimonial slider."
-      title="Fylo"
-      to="/portfolio/Fido/"
-      value="View Project"
-    />
-    <Contact />
-  </PortfolioPageStyles>
-);
+      <CardWrapper
+        alt={p[1].alt}
+        id={p[1].id}
+        isEven={p[1].id % 2 === 0}
+        src={todo}
+        text={p[1].description}
+        title={p[1].title}
+        to={`/portfolio/${p[1].slug}`}
+        value="View Project"
+      />
+      <CardWrapper
+        alt={p[2].alt}
+        id={p[2].id}
+        isEven={p[2].id % 2 === 0}
+        src={advice}
+        text={p[2].description}
+        title={p[2].title}
+        to={`/portfolio/${p[2].slug}`}
+        value="View Project"
+      />
+      <CardWrapper
+        alt={p[3].alt}
+        id={p[3].id}
+        isEven={p[3].id % 2 === 0}
+        src={typemaster}
+        text={p[3].description}
+        title={p[3].title}
+        to={`/portfolio/${p[3].slug}`}
+        value="View Project"
+      />
+      <Contact />
+    </PortfolioPageStyles>
+  );
+};
 
 export default PortfolioPage;
 
