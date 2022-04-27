@@ -51,7 +51,9 @@ const components = {
   p: (props) => <ParagraphStyles {...props} />,
   ol: (props) => <OrderedListStyles {...props} />,
   ul: (props) => <UnorderedListStyles {...props} />,
-  a: (props) => <ExternalLinkStyles {...props} />,
+  a: (props) => (
+    <ExternalLinkStyles target="_blank" rel="noopener noreferrer" {...props} />
+  ),
   inlineCode: (props) => <InlineCodeStyles {...props} />,
 };
 
