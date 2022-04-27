@@ -10,7 +10,7 @@ const HeroImage = ({ isProject, src }) =>
       imgClassName="image"
       layout="fullWidth"
       placeholder="TRACED_SVG"
-      src="../images/hero.png"
+      src="../images/hero.jpg"
     />
   ) : (
     <GatsbyImage

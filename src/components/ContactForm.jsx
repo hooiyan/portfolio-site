@@ -32,6 +32,7 @@ const ContactFormStyles = styled.form`
     background-color: var(--color-secondary-light-gray-hex);
     border: none;
     font-family: 'PublicSans';
+    font-size: 1.3rem;
     padding: 1.65rem 1.6rem;
     width: 100%;
   }
@@ -53,81 +54,65 @@ const ContactFormStyles = styled.form`
   }
 `;
 
-const ContactForm = () => {
-  // TODO: Add form validation
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [message, setMessage] = React.useState('');
+const ContactForm = () => (
+  <ContactFormStyles
+    id="contact"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    method="post"
+    name="contact-form"
+  >
+    <input type="hidden" name="form-name" value="contact-form" />
 
-  const handleOnChange = (e) => {
-    if (name === '' && email === '' && message === '') {
-      console.log('please fill in the form');
-    }
-  };
+    <div>
+      <label htmlFor="name" name="name">
+        Name
+      </label>
+      <br />
+      <input
+        aria-label="Name"
+        id="name"
+        name="name"
+        placeholder="Jane Appleseed"
+        required
+        type="text"
+      />
+      <br />
+    </div>
 
-  return (
-    <ContactFormStyles
-      id="contact"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      method="post"
-      name="contact-form"
-    >
-      <input type="hidden" name="form-name" value="contact-form" />
+    <div>
+      <label htmlFor="email" name="email">
+        Email Address
+      </label>
+      <br />
+      <input
+        aria-label="Email"
+        id="email"
+        name="email"
+        placeholder="email@example.com"
+        required
+        type="email"
+      />
+      <br />
+    </div>
 
-      <div>
-        <label htmlFor="name" name="name">
-          Name
-        </label>
-        <br />
-        <input
-          aria-label="Name"
-          id="name"
-          name="name"
-          onChange={handleOnChange}
-          placeholder="Jane Appleseed"
-          required
-          type="text"
-        />
-        <br />
-      </div>
-
-      <div>
-        <label htmlFor="email" name="email">
-          Email Address
-        </label>
-        <br />
-        <input
-          aria-label="Email"
-          id="email"
-          name="email"
-          onChange={handleOnChange}
-          placeholder="email@example.com"
-          required
-          type="email"
-        />
-        <br />
-      </div>
-
-      <div>
-        <label htmlFor="message" name="message">
-          Message
-        </label>
-        <br />
-        <textarea
-          aria-label="Message"
-          id="message"
-          name="message"
-          onChange={handleOnChange}
-          placeholder="How can I help?"
-          required
-          rows="4"
-        />
-        <br />
-      </div>
-      <ButtonSubmit className="submit-btn" isDark value="Send Message" />
-    </ContactFormStyles>
-  );
-};
+    <div>
+      <label htmlFor="message" name="message">
+        Message
+      </label>
+      <br />
+      <textarea
+        aria-label="Message"
+        id="message"
+        name="message"
+        placeholder="How can I help?"
+        required
+        rows="4"
+      />
+      <br />
+    </div>
+    <ButtonSubmit className="submit-btn" isDark value="Send Message" />
+  </ContactFormStyles>
+);
 
 export default ContactForm;

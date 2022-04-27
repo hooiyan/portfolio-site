@@ -15,7 +15,7 @@ const SocialNetworkStyles = styled.section`
   }
 `;
 
-const OutsideLink = styled.a`
+const OutsideLinkStyles = styled.a`
   cursor: pointer;
   height: 2.4rem;
   width: 2.4rem;
@@ -24,15 +24,25 @@ const OutsideLink = styled.a`
 const SocialNetwork = ({ fill }) => (
   // TODO: Add social media links
   <SocialNetworkStyles className="footer-social">
-    <OutsideLink className="outside-link icon-github">
+    <OutsideLinkStyles
+      className="outside-link icon-github"
+      href="https://github.com/hooiyan"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       <IconGitHub fill={fill} />
-    </OutsideLink>
-    <OutsideLink className="outside-link icon-twitter">
+    </OutsideLinkStyles>
+    {/* <OutsideLinkStyles className="outside-link icon-twitter">
       <IconTwitter fill={fill} />
-    </OutsideLink>
-    <OutsideLink className="outside-link icon-linkedin">
+    </OutsideLinkStyles> */}
+    <OutsideLinkStyles
+      className="outside-link icon-linkedin"
+      href="https://www.linkedin.com/in/hoehooiyan/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       <IconLinkedIn fill={fill} />
-    </OutsideLink>
+    </OutsideLinkStyles>
   </SocialNetworkStyles>
 );
 export default SocialNetwork;

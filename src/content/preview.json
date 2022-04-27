@@ -8,7 +8,7 @@
   },
   {
     "alt": "React Todo Web App",
-    "description": "A React web app built together with Styled Components and Recoil that allows users to add, mark, and delete to-do items. The users can drag and drop to reorder the to-do items.",
+    "description": "A dark/light themed React web app built together with Styled Components and Recoil that allows users to add, mark, and delete to-do items. The users can drag and drop to reorder the to-do items.",
     "id": 2,
     "slug": "todo",
     "title": "Todo"
