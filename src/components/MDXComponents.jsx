@@ -25,8 +25,8 @@ const OrderedListStyles = styled.ol`
 
 const UnorderedListStyles = styled.ul`
   color: rgba(51, 50, 61, 0.8);
-  list-style: none;
   margin-bottom: 4rem;
+  margin-left: 2rem;
 
   li {
     margin-bottom: 1rem;
