@@ -9,9 +9,9 @@
 
 ## 🚀 Getting started
 
-1.  **Clone the repository**
+1.  Clone the repository
 
-2.  **Install packages**
+2.  Install packages
 
     ```bash
     cd <the project name>
@@ -20,7 +20,13 @@
     yarn install
     ```
 
-3.  **Open the code and start customizing!**
+3. Run local development server
+
+    ```bash
+    npm run develop
+    ```
+
+4. Open the code and start customizing!
 
     Your site is now running at http://localhost:8000!
 
