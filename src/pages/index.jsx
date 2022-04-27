@@ -20,7 +20,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Seo isHome />
-    <Hero />
+    <Hero isHome />
     <CardWrapper
       alt="Screenshot of my latest project"
       id="about"

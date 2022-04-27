@@ -24,6 +24,6 @@ const HeroImage = ({ isProject, src }) =>
 export default HeroImage;
 
 HeroImage.propTypes = {
-  isProject: PropTypes.bool,
+isProject: PropTypes.bool,
   src: PropTypes.object,
 };
