@@ -37,7 +37,7 @@ const SocialNetwork = ({ fill }) => (
     </OutsideLinkStyles> */}
     <OutsideLinkStyles
       className="outside-link icon-linkedin"
-      href="https://www.linkedin.com/in/hoehooiyan/"
+      href="https://www.linkedin.com/in/hooiyan/"
       rel="noopener noreferrer"
       target="_blank"
     >
