@@ -1,7 +1,7 @@
 [
   {
     "alt": "Next.js Entertainment Web App",
-    "description": "An entertainment web app built with Next.js and TailwindCSS that allows users to search for movies and tv shows as well as viewing the relevant information.",
+    "description": "An entertainment web app built with Next.js and TailwindCSS that allows users to search for movies and tv shows as well as viewing relevant information.",
     "id": 1,
     "slug": "entertainment",
     "title": "Entertainment"
