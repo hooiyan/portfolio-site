@@ -1,9 +1,11 @@
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import device from '../styles/Breakpoints';
 import IconLeftArrow from './icons/IconLeftArrow';
 import IconRightArrow from './icons/IconRightArrow';
+import { capitalize } from '../utils';
 
 const ProjectNavigationStyles = styled.section`
   display: flex;
@@ -81,18 +83,18 @@ const ChildStyles = styled(Link)`
   }
 `;
 
-const ProjectNavigation = () => (
+const ProjectNavigation = ({ prev, next }) => (
   <ProjectNavigationStyles>
-    <ChildStyles to="/portfolio/" className="previous-wrapper">
+    <ChildStyles to={`/portfolio/${prev}`} className="previous-wrapper">
       <IconLeftArrow />
       <div className="previous-text">
-        <h3>Todo</h3>
+        <h3>{capitalize(prev)}</h3>
         <p>Previous Project</p>
       </div>
     </ChildStyles>
-    <ChildStyles to="/portfolio/" className="next-wrapper">
+    <ChildStyles to={`/portfolio/${next}`} className="next-wrapper">
       <div className="next-text">
-        <h3>Entertainment</h3>
+        <h3>{capitalize(next)}</h3>
         <p>Next Project</p>
       </div>
       <IconRightArrow />
@@ -101,3 +103,8 @@ const ProjectNavigation = () => (
 );
 
 export default ProjectNavigation;
+
+ProjectNavigation.propTypes = {
+  prev: PropTypes.string.isRequired,
+  next: PropTypes.string.isRequired,
+};

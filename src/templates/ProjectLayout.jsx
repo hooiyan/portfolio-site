@@ -3,7 +3,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import device from '../styles/Breakpoints';
 import Contact from '../components/Contact';
 import HeroImage from '../components/HeroImage';
 import MDXComponents from '../components/MDXComponents';
@@ -12,6 +11,7 @@ import ProjectNavigation from '../components/ProjectNavigation';
 import ProjectRight from '../components/ProjectRight';
 import Seo from '../components/Seo';
 import TwoColumn from '../components/TwoColumn';
+import device from '../styles/Breakpoints';
 
 const ProjectLayoutStyles = styled.section`
   .image-wrapper {
@@ -27,7 +27,7 @@ const ProjectLayoutStyles = styled.section`
   }
 `;
 
-const ProjectLayout = ({ data: { mdx }, pageContext }) => (
+const ProjectLayout = ({ data: { mdx } }) => (
   <ProjectLayoutStyles className="single-project-wrapper">
     <Seo />
     <HeroImage isProject src={mdx.frontmatter.hero} />
@@ -45,7 +45,10 @@ const ProjectLayout = ({ data: { mdx }, pageContext }) => (
         </MDXComponents>
       </ProjectRight>
     </TwoColumn>
-    <ProjectNavigation />
+    <ProjectNavigation
+      prev={mdx.frontmatter.prev}
+      next={mdx.frontmatter.next}
+    />
     <Contact />
   </ProjectLayoutStyles>
 );
@@ -60,6 +63,8 @@ export const pageQuery = graphql`
       frontmatter {
         githubLink
         liveDemo
+        prev
+        next
         summary
         tags
         title
@@ -75,5 +80,4 @@ export const pageQuery = graphql`
 
 ProjectLayout.propTypes = {
   data: PropTypes.object,
-  pageContext: PropTypes.object,
 };
