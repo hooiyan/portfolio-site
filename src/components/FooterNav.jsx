@@ -36,11 +36,18 @@ const FooterNavStyles = styled.section`
   a {
     color: var(--white);
   }
+
+  .logo {
+    color: var(--color-secondary-very-light-gray-hex);
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
 `;
 
 const FooterNav = () => (
   <FooterNavStyles className="footer-nav">
-    <Logo fill="var(--white)" />
+    {/* <Logo fill="var(--white)" /> */}
     <ul>
       <NavMenuItem>
         <Link to="/">Home</Link>
